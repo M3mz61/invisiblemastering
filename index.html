@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* True black mobile viewport foundation */
+        /* Global true black canvas */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* Stacks the three layout blocks vertically */
+        /* --- STABLE VERTICAL PHONE FLOW --- */
         .page-wrapper {
             display: flex;
             flex-direction: column;
@@ -25,21 +25,21 @@
             height: 100vh;
         }
 
-        /* Fixed container block dimensions matching your screenshot precisely */
+        /* Pulls your exact newly cropped asset */
         .graphic-block {
             width: 100%;
             height: 35vh; 
-            background-image: url('Invisible%20man%201.png');
+            background-image: url('detective-cropped.jpg');
             background-repeat: no-repeat;
             background-size: contain;
         }
 
-        /* 1. TOP BLOCK: Original graphic anchored cleanly to the top-left */
+        /* Top block: Left-aligned */
         .top-left-man {
             background-position: left top;
         }
 
-        /* 2. MIDDLE BLOCK: Pure black gap for content text */
+        /* Middle block: Centered Text Zone */
         .text-zone {
             width: 100%;
             height: 30vh;
@@ -49,23 +49,18 @@
             background-color: #000000;
         }
 
-        /* 3. BOTTOM BLOCK: Mirrored position layer
-           Flips the entire block horizontally. Because the block is flipped, 
-           setting background-position to "left" makes it visually render 
-           on the RIGHT side of the iPhone screen in Firefox. */
+        /* Bottom block: Mirrored for iOS Firefox layout stability */
         .bottom-right-man {
             background-position: left bottom; 
             transform: scaleX(-1); 
         }
 
-        /* Central Typography Zone */
+        /* Central Typography Presentation Layout */
         .branding-centerpiece {
             width: 90%;
             max-width: 480px;
             text-align: center;
             color: #ffffff;
-            
-            /* Smooth fade-in presentation */
             opacity: 0;
             animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.1s;
@@ -85,6 +80,56 @@
             color: #b5b5b7;
             margin: 0;
             font-weight: 300;
+        }
+
+        /* --- UNIFIED DESKTOP & MAC PRO SYSTEM --- */
+        @media (min-width: 1025px) {
+            .page-wrapper {
+                position: relative;
+                display: block; /* Disables stacked boxes on desktop */
+            }
+
+            /* Breaks graphics out of constraints into absolute layout placements */
+            .graphic-block {
+                position: absolute;
+                width: 30vw;   /* Keeps figures perfectly scaled to screen width */
+                height: 45vh;  /* High rendering box limits */
+                z-index: 1;
+            }
+
+            .top-left-man {
+                top: 20px;
+                left: 20px;
+                background-position: left top;
+            }
+
+            .bottom-right-man {
+                bottom: 20px;
+                right: 20px;
+                top: auto;
+                background-position: left bottom;
+            }
+
+            /* Snaps content precisely to the absolute center of the Mac Pro display */
+            .text-zone {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
+                height: auto;
+                z-index: 10;
+                background-color: transparent;
+            }
+
+            .title {
+                font-size: 3.6rem; 
+                letter-spacing: 2px;
+            }
+
+            .tagline {
+                font-size: 1.6rem;
+            }
         }
 
         @keyframes cleanFadeIn {
