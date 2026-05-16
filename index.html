@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Pure pitch black background baseline */
+        /* Deep true black background canvas */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* Stacks layout components vertically */
+        /* Continuous stacked vertical arrangement tracking */
         .page-wrapper {
             display: flex;
             flex-direction: column;
@@ -25,23 +25,31 @@
             height: 100vh;
         }
 
-        /* Using standard brightness/contrast filters to mask image edges into true black */
+        /* Container blocks providing spatial boundaries */
         .graphic-block {
             width: 100%;
             height: 35vh; 
-            background-image: url('detective-cropped.jpg');
-            background-repeat: no-repeat;
-            background-size: contain;
+            position: relative;
             background-color: #000000;
-            filter: contrast(1.5) brightness(0.9); /* Sharpens line art while crushing background noise */
         }
 
-        /* 1. TOP BLOCK: Positioned closer to center */
+        /* The actual floating figure asset layer */
+        .detective-asset {
+            position: absolute;
+            height: 100%;
+            width: auto; /* Maintains natural artwork image proportions */
+            
+            /* MAGIC TRICK: Drops the image background entirely while leaving white lines crisp */
+            mix-blend-mode: screen; 
+        }
+
+        /* 1. TOP ZONE: Positioned inward from the left wall towards center */
         .top-left-man {
-            background-position: 23% top; 
+            top: 0;
+            left: 20%; 
         }
 
-        /* 2. MIDDLE BLOCK: Pure typography content channel */
+        /* 2. MIDDLE ZONE: Dedicated pure typography channel */
         .text-zone {
             width: 100%;
             height: 30vh;
@@ -51,10 +59,11 @@
             background-color: #000000;
         }
 
-        /* 3. BOTTOM BLOCK: Mirrored cleanly for iOS Firefox layout stability */
+        /* 3. BOTTOM ZONE: Positioned inward from the right wall and cleanly mirrored */
         .bottom-right-man {
-            background-position: 23% bottom; 
-            transform: scaleX(-1); 
+            top: 0;
+            right: 20%; 
+            transform: scaleX(-1); /* Flips asset horizontally toward the text centerpiece */
         }
 
         /* Central branding typography centerpiece */
@@ -94,7 +103,9 @@
 <body>
 
     <div class="page-wrapper">
-        <div class="graphic-block top-left-man"></div>
+        <div class="graphic-block">
+            <img src="detective-cropped.jpg" class="detective-asset top-left-man" alt="Detective Left">
+        </div>
 
         <div class="text-zone">
             <div class="branding-centerpiece">
@@ -103,7 +114,9 @@
             </div>
         </div>
 
-        <div class="graphic-block bottom-right-man"></div>
+        <div class="graphic-block">
+            <img src="detective-cropped.jpg" class="detective-asset bottom-right-man" alt="Detective Right">
+        </div>
     </div>
 
 </body>
