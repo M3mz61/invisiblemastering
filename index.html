@@ -12,7 +12,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; /* Pure digital black */
+            background-color: #000000; 
             font-family: 'Times New Roman', Times, serif;
             box-sizing: border-box;
         }
@@ -27,43 +27,41 @@
             align-items: center;
         }
 
-        /* Base rules for the corner graphics layers */
+        /* Graphic base zones - Sized by width so he stays large on mobile */
         .detective-layer {
             position: absolute;
-            width: 60vw; 
-            height: 38vh; 
+            width: 75vw; /* Makes him take up 75% of the screen width so he stays big */
+            height: 50vh; /* Gives him plenty of vertical room so he isn't squished */
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
             background-size: contain;
-            pointer-events: none; /* Keeps screen interactions responsive */
+            pointer-events: none; 
             z-index: 1;
 
-            /* PHOTOSHOP LAYER BLENDING: 
-               This drops out the off-black charcoal box background entirely, 
-               blending it perfectly into the #000000 body canvas. */
+            /* Blends the charcoal box into pure black */
             mix-blend-mode: lighten; 
         }
 
         /* 1. Upper-Left Corner: Anchored top-left, naturally facing right */
         .upper-left {
-            top: 0;
-            left: 0;
+            top: -2%;   /* Slightly tucked away for a clean crop */
+            left: -5%;
             background-position: left top;
         }
 
         /* 2. Bottom-Right Corner: Anchored bottom-right, flipped to face left */
         .bottom-right {
-            bottom: 0;
-            right: 0;
+            bottom: -2%;
+            right: -5%;
             background-position: right bottom;
             transform: scaleX(-1); /* Horizontal mirror flip */
         }
 
-        /* Central Typography Zone: Floating perfectly clear of background boxes */
+        /* Central Typography Zone: Floating perfectly clear in the middle */
         .branding-centerpiece {
             position: relative;
-            z-index: 10; /* Keeps text layered sharply on top */
-            width: 90%;
+            z-index: 10; 
+            width: 85%;
             max-width: 460px;
             text-align: center;
             color: #ffffff;
@@ -85,7 +83,7 @@
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Balanced clean contrast tint */
+            color: #b5b5b7; 
             margin: 0;
             font-weight: 300;
         }
