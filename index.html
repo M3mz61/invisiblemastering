@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Creates a single, seamless, non-scrolling canvas */
+        /* Setup a unified, absolute true black screen */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,57 +17,50 @@
             box-sizing: border-box;
         }
 
-        /* This container manages BOTH image instances on a single layer.
-           - First image asset is pinned to top-left, scaled to fit gracefully.
-           - Second image asset is pinned to bottom-right.
-        */
-        .diagonal-canvas {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            
-            /* High-performance multi-background stacking */
-            background-image: url('Invisible%20man%201.png'), url('Invisible%20man%201.png');
-            background-repeat: no-repeat, no-repeat;
-            background-position: left top, right bottom;
-            background-size: auto 35vh, auto 35vh; /* Uniform sizing prevents crowding on mobile viewports */
-            
-            /* Displays typography cleanly in the middle of the frame */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* CSS Pseudo-element handles the mirroring operation.
-           This targets only the second background layer at the bottom right, 
-           flipping him horizontally to face inward toward the text.
-        */
-        .diagonal-canvas::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
+        /* 1. UPPER LEFT CORNER: Floating asset facing right */
+        .man-top-left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw; 
+            height: 35vh; 
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
-            background-position: right bottom;
-            background-size: auto 35vh;
-            transform: scaleX(-1); /* Flips the figure cleanly */
+            background-position: left top;
+            background-size: contain;
             pointer-events: none;
             z-index: 1;
         }
 
-        /* Typography Centerpiece: Remains independent and safe from background seams */
-        .branding-centerpiece {
-            position: relative;
-            z-index: 10; 
-            width: 85%;
+        /* 2. BOTTOM RIGHT CORNER: Floating asset mirrored to face left */
+        .man-bottom-right {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 50vw; 
+            height: 35vh; 
+            background-image: url('Invisible%20man%201.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: contain;
+            transform: scaleX(-1); /* Mirrors him horizontally */
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* TYPOGRAPHY CENTERPIECE: Anchored perfectly in the screen sweet spot */
+        .branding-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
             max-width: 450px;
             text-align: center;
             color: #ffffff;
+            z-index: 10; /* Keeps text layered cleanly on top */
             
-            /* Elegant display fade-in animation sequence */
+            /* Fluid fade-in entry */
             opacity: 0;
             animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.1s;
@@ -84,7 +77,7 @@
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Subtle off-white for crisp text definition */
+            color: #b5b5b7; /* Balanced off-white layer for crisp contrast */
             margin: 0;
             font-weight: 300;
         }
@@ -98,13 +91,12 @@
 </head>
 <body>
 
-    <div class="diagonal-canvas">
-        
-        <div class="branding-centerpiece">
-            <h1 class="title">Invisible Mastering Inc</h1>
-            <p class="tagline">Heard, but not seen.</p>
-        </div>
+    <div class="man-top-left"></div>
+    <div class="man-bottom-right"></div>
 
+    <div class="branding-container">
+        <h1 class="title">Invisible Mastering Inc</h1>
+        <p class="tagline">Heard, but not seen.</p>
     </div>
 
 </body>
