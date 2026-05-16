@@ -5,40 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Matches the background color of your image for a seamless canvas */
+        /* Full-viewport pitch black canvas setup */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #f6f6f6; /* Premium off-white tone matching the image texture */
+            background-color: #000000; 
             font-family: 'Times New Roman', Times, serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #1a1a1a; /* Clean dark gray text to stand out sharply */
+            color: #ffffff;
             text-align: center;
         }
 
-        /* Displays your character completely centered and unified */
-        .character-container {
+        /* Set up a main container that fills the exact mobile screen size */
+        .wrapper {
+            position: relative;
             width: 100%;
-            height: 45vh; 
-            background-image: url('Invisible%20man%201.png');
-            background-repeat: no-repeat;
-            background-position: center bottom;
-            background-size: contain;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically centers the content inside */
+            align-items: center;
         }
 
-        /* Animated typography section */
+        /* Background artwork layer - locked to the left side */
+        .character-container {
+            position: absolute;
+            top: 5%;
+            left: 0;
+            width: 100%;
+            height: 50vh; /* Fixed height container to give him clear definition */
+            background-image: url('Invisible%20man%201.png');
+            background-repeat: no-repeat;
+            background-position: left center; /* Keeps your favorite left alignment intact */
+            background-size: contain;
+            pointer-events: none; /* Allows the screen to scale seamlessly */
+        }
+
+        /* Branding typography stack centered beautifully on the screen */
         .branding {
-            margin-top: 25px;
+            position: relative;
+            z-index: 2; /* Ensures text floats crisply on top of any dark graphics boundaries */
+            margin-top: 35vh; /* Pushes text directly into a beautifully centered focal point */
             padding: 0 20px;
             opacity: 0;
             transform: translateY(-20px);
-            animation: elegantDropDown 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: clearDropDown 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             animation-delay: 0.2s;
         }
 
@@ -46,17 +59,17 @@
             font-size: 2.2rem;
             font-weight: 400;
             letter-spacing: 1.5px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #555555; /* Soft gray for elegant contrast */
+            color: #b5b5b7; /* Classic clean off-white contrast accent */
             font-weight: 300;
         }
 
-        @keyframes elegantDropDown {
+        @keyframes clearDropDown {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -66,11 +79,13 @@
 </head>
 <body>
 
-    <div class="character-container"></div>
+    <div class="wrapper">
+        <div class="character-container"></div>
 
-    <div class="branding">
-        <div class="title">Invisible Mastering Inc</div>
-        <div class="tagline">Heard, but not seen.</div>
+        <div class="branding">
+            <div class="title">Invisible Mastering Inc</div>
+            <div class="tagline">Heard, but not seen.</div>
+        </div>
     </div>
 
 </body>
