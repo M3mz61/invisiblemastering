@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Unmovable true black absolute canvas */
+        /* Unmovable true black viewport canvas baseline */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,53 +17,57 @@
             box-sizing: border-box;
         }
 
-        /* The overall playing card layout container window */
-        .card-frame {
-            position: relative;
-            width: 100%;
-            height: 100%;
+        /* --- MOBILE MODE (Preserving your working smartphone layout exactly) --- */
+        .page-wrapper {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
         }
 
-        /* The graphic assets act like the corner suits of a playing card */
-        .corner-graphic {
-            position: absolute;
-            width: 50vw;  /* Scaled naturally to screen width */
-            height: 35vh; /* Scaled naturally to screen height */
+        .graphic-block {
+            width: 100%;
+            height: 35vh; 
+            position: relative;
+        }
+
+        .top-left-man {
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
             background-size: contain;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* 1. TOP LEFT CORNER: Facing right naturally */
-        .top-left {
-            top: 0;
-            left: 0;
             background-position: left top;
         }
 
-        /* 2. BOTTOM RIGHT CORNER: Mirrored and facing left */
-        .bottom-right {
-            bottom: 0;
-            right: 0;
-            background-position: right bottom;
-            transform: scaleX(-1); /* Flips the figure horizontally */
+        .text-zone {
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
         }
 
-        /* CENTRAL BRANDING CONTENT: Floating safely right in the middle space */
+        /* Mirror logic targets only the background asset inside the wrapper */
+        .bottom-right-man::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Invisible%20man%201.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right bottom; 
+            transform: scaleX(-1); 
+        }
+
+        /* Center branding text styles */
         .branding-centerpiece {
-            position: relative;
-            z-index: 10; /* Ensures the typography stays sharply on top */
-            width: 85%;
+            width: 90%;
             max-width: 480px;
             text-align: center;
             color: #ffffff;
-            
-            /* Fluid fade-in entry */
             opacity: 0;
             animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.1s;
@@ -73,28 +77,70 @@
             font-size: 2.1rem;
             font-weight: 400;
             letter-spacing: 1.5px;
-            margin: 0 0 12px 0;
+            margin: 0 0 10px 0;
             line-height: 1.2;
         }
 
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Balanced clean gray contrast */
+            color: #b5b5b7;
             margin: 0;
             font-weight: 300;
         }
 
-        /* Clean responsive boost for larger high-res screens like the Mac Pro */
-        @media (min-width: 1024px) {
-            .corner-graphic {
-                width: 25vw;  /* Shrinks the footprint down on large desktops so it looks premium */
-                height: 40vh;
+        /* --- MAC PRO / DESKTOP SPECIFIC CARDFRAME OVERRIDES --- */
+        @media (min-width: 1025px) {
+            .page-wrapper {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                display: block; /* Disables the mobile vertical stacking behavior */
             }
+
+            /* Transforms blocks into floating playing-card corner nodes */
+            .graphic-block {
+                position: absolute;
+                width: 25vw;   /* Sized elegantly relative to display width */
+                height: 45vh;  /* Gives the file plenty of canvas breathing room */
+                z-index: 1;
+            }
+
+            /* Absolute Top Left Anchor */
+            .top-left-man {
+                top: 0;
+                left: 0;
+                background-position: left top;
+            }
+
+            /* Absolute Bottom Right Anchor */
+            .bottom-right-man {
+                bottom: 0;
+                right: 0;
+                top: auto; 
+            }
+
+            .bottom-right-man::before {
+                background-position: right bottom;
+            }
+
+            /* Locks the typography centerpiece directly to the center of your Mac screen */
+            .text-zone {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
+                height: auto;
+                z-index: 10;
+                background-color: transparent;
+            }
+
             .title {
-                font-size: 3.5rem;
+                font-size: 3.5rem; /* Upgraded premium footprint for large screens */
                 letter-spacing: 2px;
             }
+
             .tagline {
                 font-size: 1.6rem;
             }
@@ -109,15 +155,17 @@
 </head>
 <body>
 
-    <div class="card-frame">
-        <div class="corner-graphic top-left"></div>
+    <div class="page-wrapper">
+        <div class="graphic-block top-left-man"></div>
 
-        <div class="corner-graphic bottom-right"></div>
-
-        <div class="branding-centerpiece">
-            <h1 class="title">Invisible Mastering Inc</h1>
-            <p class="tagline">Heard, but not seen.</p>
+        <div class="text-zone">
+            <div class="branding-centerpiece">
+                <h1 class="title">Invisible Mastering Inc</h1>
+                <p class="tagline">Heard, but not seen.</p>
+            </div>
         </div>
+
+        <div class="graphic-block bottom-right-man"></div>
     </div>
 
 </body>
