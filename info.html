@@ -2,19 +2,34 @@
 <ul style="list-style: none; padding: 0; margin: 20px 0;">
     <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
         <span style="float: left; font-weight: bold;">Single Track Mastering:</span> 
-        <span id="rate-single" style="float: right; font-weight: bold;">£100.00 / €120.00 / $130.00</span>
+        <div style="float: right; text-align: right;">
+            <div id="rate-single-main" style="font-weight: bold;">£100.00</div>
+            <div id="rate-single-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€120.00 &nbsp;/&nbsp; $130.00</div>
+        </div>
     </li>
+    
     <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
         <span style="float: left; font-weight: bold;">EP Mastering (Up to 4 Tracks):</span> 
-        <span id="rate-ep" style="float: right; font-weight: bold;">£320.00 / €384.00 / $416.00</span>
+        <div style="float: right; text-align: right;">
+            <div id="rate-ep-main" style="font-weight: bold;">£320.00</div>
+            <div id="rate-ep-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€384.00 &nbsp;/&nbsp; $416.00</div>
+        </div>
     </li>
+    
     <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
         <span style="float: left; font-weight: bold;">Full Album Mastering (Up to 12 Tracks):</span> 
-        <span id="rate-album" style="float: right; font-weight: bold;">£800.00 / €960.00 / $1,040.00</span>
+        <div style="float: right; text-align: right;">
+            <div id="rate-album-main" style="font-weight: bold;">£800.00</div>
+            <div id="rate-album-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€960.00 &nbsp;/&nbsp; $1,040.00</div>
+        </div>
     </li>
+    
     <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
         <span style="float: left; font-weight: bold;">Stem Mastering (Per Track / Max 5 Stems):</span> 
-        <span id="rate-stem" style="float: right; font-weight: bold;">£180.00 / €216.00 / $234.00</span>
+        <div style="float: right; text-align: right;">
+            <div id="rate-stem-main" style="font-weight: bold;">£180.00</div>
+            <div id="rate-stem-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€216.00 &nbsp;/&nbsp; $234.00</div>
+        </div>
     </li>
 </ul>
 
@@ -36,18 +51,29 @@ function checkPromoVoucher() {
     var textCode = document.getElementById("promoField").value.trim().toUpperCase();
     var feedbackNode = document.getElementById("promoFeedback");
     
-    var tSingle = document.getElementById("rate-single");
-    var tEp = document.getElementById("rate-ep");
-    var tAlbum = document.getElementById("rate-album");
-    var tStem = document.getElementById("rate-stem");
+    var sMain = document.getElementById("rate-single-main");
+    var sSub = document.getElementById("rate-single-sub");
+    var eMain = document.getElementById("rate-ep-main");
+    var eSub = document.getElementById("rate-ep-sub");
+    var aMain = document.getElementById("rate-album-main");
+    var aSub = document.getElementById("rate-album-sub");
+    var stMain = document.getElementById("rate-stem-main");
+    var stSub = document.getElementById("rate-stem-sub");
 
     feedbackNode.style.display = "block";
 
     if (textCode === "PREMIUM20" || textCode === "MASTER20") {
-        tSingle.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£100.00 / €120.00 / $130.00</span> <span style='color: #00ff00;'>£80.00 / €96.00 / $104.00</span>";
-        tEp.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£320.00 / €384.00 / $416.00</span> <span style='color: #00ff00;'>£256.00 / €307.20 / $332.80</span>";
-        tAlbum.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£800.00 / €960.00 / $1,040.00</span> <span style='color: #00ff00;'>£640.00 / €768.00 / $832.00</span>";
-        tStem.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£180.00 / €216.00 / $234.00</span> <span style='color: #00ff00;'>£144.00 / €172.80 / $187.20</span>";
+        sMain.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£100.00</span> <span style='color: #00ff00;'>£80.00</span>";
+        sSub.innerHTML = "<span style='text-decoration: line-through; color: #666666;'>€120.00 / $130.00</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€96.00 / $104.00</span>";
+        
+        eMain.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£320.00</span> <span style='color: #00ff00;'>£256.00</span>";
+        eSub.innerHTML = "<span style='text-decoration: line-through; color: #666666;'>€384.00 / $416.00</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€307.20 / $332.80</span>";
+        
+        aMain.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£800.00</span> <span style='color: #00ff00;'>£640.00</span>";
+        aSub.innerHTML = "<span style='text-decoration: line-through; color: #666666;'>€960.00 / $1,040.00</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€768.00 / $832.00</span>";
+        
+        stMain.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£180.00</span> <span style='color: #00ff00;'>£144.00</span>";
+        stSub.innerHTML = "<span style='text-decoration: line-through; color: #666666;'>€216.00 / $234.00</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€172.80 / $187.20</span>";
         
         feedbackNode.style.color = "#00ff00";
         feedbackNode.innerHTML = "Success: 20% promotional discount applied.";
