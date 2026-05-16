@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Smooth, uniform canvas color */
+        /* Pure pitch black background baseline */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #0d0d11; 
+            background-color: #000000; 
             font-family: 'Times New Roman', Times, serif;
             box-sizing: border-box;
         }
 
-        /* Continuous stacked vertical flex layout */
+        /* Stacks layout components vertically */
         .page-wrapper {
             display: flex;
             flex-direction: column;
@@ -25,39 +25,39 @@
             height: 100vh;
         }
 
-        /* Blend modes absorb image texture variations into the background flawlessly */
+        /* Using standard brightness/contrast filters to mask image edges into true black */
         .graphic-block {
             width: 100%;
             height: 35vh; 
             background-image: url('detective-cropped.jpg');
             background-repeat: no-repeat;
             background-size: contain;
-            background-color: #0d0d11;
-            background-blend-mode: multiply; 
+            background-color: #000000;
+            filter: contrast(1.5) brightness(0.9); /* Sharpens line art while crushing background noise */
         }
 
-        /* 1. TOP BLOCK: Positioned inward from left wall toward center text */
+        /* 1. TOP BLOCK: Positioned closer to center */
         .top-left-man {
             background-position: 23% top; 
         }
 
-        /* 2. MIDDLE BLOCK: Pure typography channel */
+        /* 2. MIDDLE BLOCK: Pure typography content channel */
         .text-zone {
             width: 100%;
             height: 30vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0d0d11;
+            background-color: #000000;
         }
 
-        /* 3. BOTTOM BLOCK: Mirrored position layer */
+        /* 3. BOTTOM BLOCK: Mirrored cleanly for iOS Firefox layout stability */
         .bottom-right-man {
             background-position: 23% bottom; 
             transform: scaleX(-1); 
         }
 
-        /* Center branding typography centerpiece */
+        /* Central branding typography centerpiece */
         .branding-centerpiece {
             width: 90%;
             max-width: 480px;
