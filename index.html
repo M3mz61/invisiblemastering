@@ -5,56 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Force a unified seamless TRUE BLACK canvas across the entire screen */
+        /* Base setup for absolute dark mode environment */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; /* Absolute True Black */
+            background-color: #000000; /* Absolute pitch black */
             font-family: 'Times New Roman', Times, serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: center; /* Centers the whole cluster */
             align-items: center;
-            color: #ffffff; /* Brilliant White Text */
+            color: #ffffff; /* Crisp brilliant white */
             text-align: center;
         }
 
-        /* Dead-center your invisible detective graphic and invert it to white lines */
+        /* Fixed container keeping the vector centered and inside the screen boundaries */
         .character-container {
             width: 100%;
-            height: 45vh; 
+            height: 40vh; /* Scaled down slightly to guarantee typography fits on mobile screen */
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
-            background-position: center center;
+            background-position: center bottom;
             background-size: contain;
-            /* Inverts the black line asset into brilliant white lines over the true black background */
-            filter: invert(1); 
         }
 
-        /* Fluid text entry drop down animation */
+        /* Branding typography stack with smooth entry dropdown */
         .branding {
-            margin-top: 25px;
+            margin-top: 20px;
             padding: 0 20px;
             opacity: 0;
             transform: translateY(-20px);
             animation: clearDropDown 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            animation-delay: 0.3s;
+            animation-delay: 0.2s;
         }
 
         .title {
             font-size: 2.2rem;
             font-weight: 400;
             letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Balanced off-white/gray tone for clean typographic hierarchy */
+            color: #b5b5b7; /* Subtle off-white text contrast layer */
             font-weight: 300;
         }
 
