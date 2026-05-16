@@ -5,40 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Base setup for absolute dark mode environment */
+        /* Matches the background color of your image for a seamless canvas */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; /* Absolute pitch black */
+            background-color: #f6f6f6; /* Premium off-white tone matching the image texture */
             font-family: 'Times New Roman', Times, serif;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centers the whole cluster */
+            justify-content: center;
             align-items: center;
-            color: #ffffff; /* Crisp brilliant white */
+            color: #1a1a1a; /* Clean dark gray text to stand out sharply */
             text-align: center;
         }
 
-        /* Fixed container keeping the vector centered and inside the screen boundaries */
+        /* Displays your character completely centered and unified */
         .character-container {
             width: 100%;
-            height: 40vh; /* Scaled down slightly to guarantee typography fits on mobile screen */
+            height: 45vh; 
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
             background-position: center bottom;
             background-size: contain;
         }
 
-        /* Branding typography stack with smooth entry dropdown */
+        /* Animated typography section */
         .branding {
-            margin-top: 20px;
+            margin-top: 25px;
             padding: 0 20px;
             opacity: 0;
             transform: translateY(-20px);
-            animation: clearDropDown 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: elegantDropDown 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             animation-delay: 0.2s;
         }
 
@@ -52,11 +52,11 @@
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Subtle off-white text contrast layer */
+            color: #555555; /* Soft gray for elegant contrast */
             font-weight: 300;
         }
 
-        @keyframes clearDropDown {
+        @keyframes elegantDropDown {
             to {
                 opacity: 1;
                 transform: translateY(0);
