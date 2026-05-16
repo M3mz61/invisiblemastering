@@ -33,23 +33,34 @@
         <p id="promoFeedback" style="margin: 12px 0 0 0; font-size: 13px; font-weight: bold; display: none;"></p>
     </div>
 
-    <h2>Hardware Manifest</h2>
-    <ul style="list-style-type: square; padding-left: 20px; color: #cccccc; line-height: 1.8;">
-        <li><strong style="color: #ffffff;">Universal Audio Apollo Quad</strong> (Audio Interface / Routing)</li>
-        <li><strong style="color: #ffffff;">Universal Audio UAD PCIe OctoCore</strong> (DSP Acceleration)</li>
-        <li><strong style="color: #ffffff;">Digidesign / Avid Command 8</strong> (Tactile Control Surface)</li>
-        <li><strong style="color: #ffffff;">Munro Sonic Egg 150 System</strong> (Active Studio Monitor System)</li>
-        <li><strong style="color: #ffffff;">Focusrite Scarlett OctoPre Dynamic</strong> (Preamfication & Compression)</li>
-        <li><strong style="color: #ffffff;">Behringer Tube Composer T1952</strong> (Vacuum Tube Dynamics)</li>
-        <li><strong style="color: #ffffff;">Behringer Multicom Pro</strong> (Quad Compressor / Limiter)</li>
-        <li><strong style="color: #ffffff;">Behringer Multigate Pro</strong> (Quad Expander / Noise Gate)</li>
-        <li><strong style="color: #ffffff;">Behringer Ultra-Graph Pro</strong> (31-Band Graphic Equalizer)</li>
-        <li><strong style="color: #ffffff;">Behringer Ultrapatch Pro</strong> (24-Point Patchbay)</li>
-        <li><strong style="color: #ffffff;">Roland SDE-1000</strong> (Digital Delay)</li>
-        <li><strong style="color: #ffffff;">Zoom Studio 1201</strong> (Digital Multi-Effects)</li>
-        <li><strong style="color: #ffffff;">Behringer Modulizer Pro</strong> (Digital Spatial Effects)</li>
-        <li><strong style="color: #ffffff;">Neumann U87Ai</strong> (Large-Diaphragm Condenser Microphone)</li>
-        <li><strong style="color: #ffffff;">Shure SM57</strong> (Dynamic Microphone x2)</li>
-        <li><strong style="color: #ffffff;">Audio-Technica AT3035</strong> (Cardioid Condenser Microphone)</li>
-        <li><strong style="color: #ffffff;">Guitar DI / Re-Amp Setup</strong> (Direct Input & Routing Available)</li>
-        <li><strong style="color: #ffffff;">Marshall JMP
+</div>
+
+<script>
+function checkPromoVoucher() {
+    var textCode = document.getElementById("promoField").value.trim().toUpperCase();
+    var feedbackNode = document.getElementById("promoFeedback");
+    
+    var tSingle = document.getElementById("rate-single");
+    var tEp = document.getElementById("rate-ep");
+    var tAlbum = document.getElementById("rate-album");
+    var tStem = document.getElementById("rate-stem");
+
+    feedbackNode.style.display = "block";
+
+    if (textCode === "PREMIUM20" || textCode === "MASTER20") {
+        tSingle.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£6.25 / €7.50 / $7.50</span> <span style='color: #00ff00; font-weight: bold;'>£5.00 / €6.00 / $6.00</span>";
+        tEp.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£20.00 / €24.00 / $25.00</span> <span style='color: #00ff00; font-weight: bold;'>£16.00 / €19.20 / $20.00</span>";
+        tAlbum.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£50.00 / €60.00 / $60.00</span> <span style='color: #00ff00; font-weight: bold;'>£40.00 / €48.00 / $48.00</span>";
+        tStem.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£11.25 / €13.50 / $13.75</span> <span style='color: #00ff00; font-weight: bold;'>£9.00 / €10.80 / $11.00</span>";
+        
+        feedbackNode.style.color = "#00ff00";
+        feedbackNode.innerHTML = "Success: 20% promotional discount applied.";
+    } else if (textCode === "") {
+        feedbackNode.style.color = "#ff3333";
+        feedbackNode.innerHTML = "Error: Please enter a code.";
+    } else {
+        feedbackNode.style.color = "#ff3333";
+        feedbackNode.innerHTML = "Error: Invalid or expired promotional code.";
+    }
+}
+</script>
