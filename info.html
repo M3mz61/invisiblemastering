@@ -13,81 +13,82 @@
             font-family: 'Times New Roman', Times, serif;
             color: #ffffff;
             box-sizing: border-box;
-            /* CRITICAL FIX: Unlock vertical scrolling so text is never trapped */
-            overflow-y: scroll !important;
             overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
         }
-        /* Tightened header height to give your screen content maximum room */
         .header-block {
             width: 100%;
-            height: 12vh; 
+            height: 32vh; 
             position: relative;
             background-color: #000000;
-            overflow: hidden;
         }
         .detective-asset {
             position: absolute;
-            height: 140%; 
+            height: 100%;
             width: auto; 
-            top: -10%;
-            left: 5%; 
+            top: 0;
+            left: 20%; 
             mix-blend-mode: screen; 
-            opacity: 0.6;
         }
         .nav-header {
-            width: 88%;
-            max-width: 450px;
-            margin: 5px auto 0 auto;
+            width: 85%;
+            max-width: 600px;
+            margin: 20px auto 0 auto;
             display: flex;
             justify-content: flex-end;
         }
         .menu-button {
             color: #ffffff;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 1rem;
             letter-spacing: 1px;
             border: 1px solid #ffffff;
-            padding: 3px 10px;
+            padding: 8px 16px;
             text-transform: uppercase;
         }
         .container {
-            width: 88%;
-            max-width: 450px;
+            width: 85%;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 5px 0 50px 0;
+            padding: 20px 0 100px 0; /* Extra room at the bottom so scrolling feels natural */
+            opacity: 0;
+            animation: cleanFadeIn 1.2s ease-out forwards;
+            animation-delay: 0.2s;
         }
         .page-title {
-            font-size: 1.6rem;
+            font-size: 2.4rem;
             font-weight: 400;
             letter-spacing: 2px;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 40px;
             text-transform: uppercase;
         }
         .section-title {
-            font-size: 1rem;
+            font-size: 1.4rem;
             font-weight: 400;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             border-bottom: 1px solid #222222;
-            padding-bottom: 3px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
             color: #b5b5b7;
             text-transform: uppercase;
         }
         .service-tier {
-            margin-bottom: 12px;
+            margin-bottom: 35px;
         }
         .menu-item {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            margin-bottom: 6px;
         }
         .item-name {
-            font-size: 1rem;
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            padding-right: 10px;
             background: #000000;
-            padding-right: 6px;
+            position: relative;
             z-index: 2;
         }
         .item-leader {
@@ -98,70 +99,97 @@
             z-index: 1;
         }
         .item-price {
-            font-size: 1rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            padding-left: 6px;
+            padding-left: 10px;
+            color: #ffffff;
             background: #000000;
+            position: relative;
             z-index: 2;
         }
         .conversion-row {
             display: flex;
             justify-content: flex-end;
-            gap: 8px;
-            font-size: 0.8rem;
-            color: #777779;
-            margin-top: 1px;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #a0a0a2;
+            margin-bottom: 10px;
             font-style: italic;
         }
         .item-description {
-            font-size: 0.8rem;
+            font-size: 0.95rem;
             font-style: italic;
-            color: #555557;
-            margin: 2px 0 0 0;
-            line-height: 1.2;
-        }
-        
-        .bullet-list {
-            padding-left: 10px;
+            color: #888888;
+            line-height: 1.4;
             margin: 0;
         }
-        .bullet-list li {
-            font-size: 0.8rem;
-            line-height: 1.3;
-            color: #a0a0a2;
-            margin-bottom: 4px;
-            font-style: italic;
+        .info-text {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #b5b5b7;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
+        /* --- IMMERSIVE HARDWARE INDEX DRAWER --- */
         .manifest-trigger {
             display: block;
             width: 100%;
+            text-align: center;
             background: transparent;
-            border: 1px dashed #222224;
-            color: #777779;
-            padding: 6px;
+            border: 1px dashed #444446;
+            color: #b5b5b7;
+            padding: 14px;
             font-family: 'Times New Roman', Times, serif;
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             letter-spacing: 1px;
             cursor: pointer;
+            margin-top: 30px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .manifest-trigger:hover {
+            border-color: #ffffff;
+            color: #ffffff;
         }
         .manifest-content {
             display: none;
             background-color: #050505;
-            border: 1px solid #111112;
-            padding: 12px;
-            margin-top: 5px;
+            border: 1px solid #1c1c1e;
+            padding: 25px;
+            margin-bottom: 30px;
         }
-        .gear-group {
-            font-size: 0.8rem;
+        .gear-group-title {
+            font-size: 1.1rem;
+            font-weight: bold;
             color: #ffffff;
-            margin-bottom: 6px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #1c1c1e;
+            padding-bottom: 4px;
         }
-        .gear-group span {
-            color: #777779;
+        .gear-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+        .gear-list li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #b5b5b7;
+            margin-bottom: 6px;
             font-style: italic;
+        }
+        .gear-list li strong {
+            font-style: normal;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        @keyframes cleanFadeIn {
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -176,8 +204,10 @@
     </div>
 
     <div class="container">
-        <h1 class="page-title">Rates</h1>
+        <h1 class="page-title">Rates & Services</h1>
 
+        <h2 class="section-title">Mastering Tiers</h2>
+        
         <div class="service-tier">
             <div class="menu-item">
                 <span class="item-name">Single Track</span>
@@ -185,7 +215,7 @@
                 <span class="item-price">£100</span>
             </div>
             <div class="conversion-row"><span>€120</span><span>/</span><span>$130</span></div>
-            <p class="item-description">Stereo mastering optimized for all digital streaming layouts.</p>
+            <p class="item-description">Stereo mastering optimized for all streaming platforms and digital distribution channels.</p>
         </div>
 
         <div class="service-tier">
@@ -195,39 +225,56 @@
                 <span class="item-price">£170</span>
             </div>
             <div class="conversion-row"><span>€200</span><span>/</span><span>$215</span></div>
-            <p class="item-description">Up to 5 separate stems for precision mix balance and image control.</p>
+            <p class="item-description">Up to 5 separate sub-mix stems for precision instrument balance, stereo depth, and total control.</p>
         </div>
 
         <div class="service-tier">
             <div class="menu-item">
-                <span class="item-name">EP Bundle</span>
+                <span class="item-name">EP Package (4-6 Tracks)</span>
                 <span class="item-leader"></span>
                 <span class="item-price">£425</span>
             </div>
             <div class="conversion-row"><span>€500</span><span>/</span><span>$540</span></div>
-            <p class="item-description">Comprehensive sonic balancing across 4-6 tracks for a cohesive project flow.</p>
+            <p class="item-description">Comprehensive sonic balancing across your entire project file profile for a cohesive record flow.</p>
         </div>
 
-        <h2 class="section-title">Protocol</h2>
-        <ul class="bullet-list">
-            <li>World-class translation optimization across playback platforms.</li>
-            <li>Includes 2 complementary rounds of revisions per track file.</li>
-            <li>Prandial 24-bit WAV plus optimized streaming encodes.</li>
-        </ul>
+        <h2 class="section-title">Studio Info</h2>
+        <p class="info-text">
+            Invisible Mastering Inc provides world-class sonic finishes, ensuring your translations remain pristine across high-end sound systems, car stereos, and mobile devices alike. 
+        </p>
+        <p class="info-text">
+            Every master includes two complementary rounds of adjustments to guarantee your complete artistic vision is achieved. Files are delivered in pristine 24-bit WAV format alongside optimized files for streaming.
+        </p>
 
-        <h2 class="section-title">Delivery Specs</h2>
-        <ul class="bullet-list">
-            <li>Export tracks at native resolution; maintain -3dB to -6dB headroom.</li>
-            <li>Ensure master bus brickwall limiters or clipping modules are bypassed.</li>
-        </ul>
-
-        <button class="manifest-trigger" onclick="toggleManifest()">+ View Studio Manifest</button>
+        <button class="manifest-trigger" onclick="toggleManifest()">+ View Studio Setup & Specs</button>
+        
         <div id="gear-manifest" class="manifest-content">
-            <div class="gear-group"><strong>Monitors:</strong> <span>ATC SCM25A Pro / HD800S / Trinnov Nova</span></div>
-            <div class="gear-group"><strong>Analog:</strong> <span>Maselec MEA-2 EQ / SSL Fusion Bus / Bettermaker Limiter</span></div>
-            <div class="gear-group"><strong>Software:</strong> <span>Sonnox Oxford / FabFilter Suite / RX Advanced</span></div>
+            <div class="gear-group-title">Monitoring & Acoustics</div>
+            <ul class="gear-list">
+                <li><strong>ATC SCM25A Pro</strong> Three-way active reference standard systems</li>
+                <li><strong>Sennheiser HD800S</strong> Critical open-back space translation matrices</li>
+                <li><strong>Trinnov Audio Nova</strong> Hardware speaker calibration & phase correction environment</li>
+            </ul>
+
+            <div class="gear-group-title">Analog Processing Chain</div>
+            <ul class="gear-list">
+                <li><strong>Bettermaker Mastering Limiter</strong> Digital recall controlled hybrid ceiling compression</li>
+                <li><strong>Maselec MEA-2</strong> Precision stepped precision analog equalization routing</li>
+                <li><strong>SSL Fusion</strong> Stereo bus coloring, spatial widening, and transformer drive engine</li>
+            </ul>
+
+            <div class="gear-group-title">Digital Blueprint / Software</div>
+            <ul class="gear-list">
+                <li><strong>Sonnox Oxford Elite Suite</strong> Surgical filters and phase-linear dynamics control</li>
+                <li><strong>FabFilter Pro-Q3 & Pro-L2</strong> High-resolution brickwall analysis path loops</li>
+                <li><strong>iZotope RX Advanced</strong> Spectral audio restoration and structural click attenuation</li>
+            </ul>
         </div>
 
+        <h2 class="section-title">Preparation</h2>
+        <p class="info-text">
+            Please export files at their native sample rate, leaving at least -3dB to -6dB of headroom on the master bus. Ensure no heavy brickwall limiters or clipping plug-ins are active on your final export track output.
+        </p>
     </div>
 
     <script>
@@ -236,10 +283,10 @@
             var trigger = document.querySelector(".manifest-trigger");
             if (content.style.display === "block") {
                 content.style.display = "none";
-                trigger.innerText = "+ View Studio Manifest";
+                trigger.innerText = "+ View Studio Setup & Specs";
             } else {
                 content.style.display = "block";
-                trigger.innerText = "− Hide Studio Manifest";
+                trigger.innerText = "− Hide Studio Setup & Specs";
             }
         }
     </script>
