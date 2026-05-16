@@ -1,134 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastering Services</title>
-    <style>
-        body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-        .wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h2 {
-            border-bottom: 2px solid #222222;
-            padding-bottom: 8px;
-            margin-top: 20px;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
-        }
-        .price-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        .price-list li {
-            padding: 14px 0;
-            border-bottom: 1px solid #1c1c1c;
-            font-size: 16px;
-        }
-        .bold-text {
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .price-values {
-            float: right;
-            color: #cccccc;
-        }
-        /* Promo Box */
-        .promo-container {
-            background-color: #121212;
-            border: 1px solid #222222;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 30px 0;
-            clear: both;
-        }
-        .promo-label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #ffffff;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .promo-row {
-            display: flex;
-            gap: 12px;
-        }
-        .promo-input {
-            flex: 1;
-            background-color: #000000;
-            color: #ffffff;
-            border: 1px solid #333333;
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-            text-transform: uppercase;
-        }
-        .promo-btn {
-            background-color: #ffffff;
-            color: #000000;
-            border: none;
-            padding: 0 24px;
-            font-weight: bold;
-            font-size: 13px;
-            cursor: pointer;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-        .promo-message {
-            margin: 12px 0 0 0;
-            font-size: 13px;
-            font-weight: bold;
-            display: none;
-        }
-    </style>
-</head>
-<body>
+<h2>MASTERING SERVICES & RATES</h2>
+<ul style="list-style: none; padding: 0; margin: 20px 0;">
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">Single Track Mastering:</span> 
+        <span id="rate-single" style="float: right; font-weight: bold;">£100.00 / €120.00 / $130.00</span>
+    </li>
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">EP Mastering (Up to 4 Tracks):</span> 
+        <span id="rate-ep" style="float: right; font-weight: bold;">£320.00 / €384.00 / $416.00</span>
+    </li>
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">Full Album Mastering (Up to 12 Tracks):</span> 
+        <span id="rate-album" style="float: right; font-weight: bold;">£800.00 / €960.00 / $1,040.00</span>
+    </li>
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">Stem Mastering (Per Track / Max 5 Stems):</span> 
+        <span id="rate-stem" style="float: right; font-weight: bold;">£180.00 / €216.00 / $234.00</span>
+    </li>
+</ul>
 
-<div class="wrapper">
-
-    <h2>Mastering Services & Rates</h2>
-    <ul class="price-list">
-        <li>
-            <span class="bold-text">Single Track Mastering:</span> 
-            <span id="rate-single" class="price-values">£6.25 / €7.50 / $7.50</span>
-        </li>
-        <li>
-            <span class="bold-text">EP Mastering (Up to 4 Tracks):</span> 
-            <span id="rate-ep" class="price-values">£20.00 / €24.00 / $25.00</span>
-        </li>
-        <li>
-            <span class="bold-text">Full Album Mastering (Up to 12 Tracks):</span> 
-            <span id="rate-album" class="price-values">£50.00 / €60.00 / $60.00</span>
-        </li>
-        <li>
-            <span class="bold-text">Stem Mastering (Per Track / Max 5 Stems):</span> 
-            <span id="rate-stem" class="price-values">£11.25 / €13.50 / $13.75</span>
-        </li>
-    </ul>
-
-    <div class="promo-container">
-        <label for="promoField" class="promo-label">Have a promotional code?</label>
-        <div class="promo-row">
-            <input type="text" id="promoField" placeholder="Enter code here" class="promo-input">
-            <button onclick="checkPromoVoucher()" class="promo-btn">Apply</button>
-        </div>
-        <p id="promoFeedback" class="promo-message"></p>
+<div style="margin: 35px 0; padding: 20px; border: 1px solid #222222; background-color: #121212; border-radius: 4px; clear: both;">
+    <label for="promoField" style="display: block; font-weight: bold; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
+        Have a promotional code?
+    </label>
+    <div style="display: flex; gap: 12px;">
+        <input type="text" id="promoField" placeholder="Enter code here" style="flex: 1; padding: 12px; font-size: 14px; background-color: #000000; color: #ffffff; border: 1px solid #333333; outline: none; text-transform: uppercase;">
+        <button onclick="checkPromoVoucher()" style="padding: 0 24px; font-size: 13px; font-weight: bold; background-color: #ffffff; color: #000000; border: none; cursor: pointer; text-transform: uppercase; height: 43px;">
+            Apply
+        </button>
     </div>
-
+    <p id="promoFeedback" style="margin: 12px 0 0 0; font-size: 13px; font-weight: bold; display: none;"></p>
 </div>
 
 <script>
@@ -144,10 +44,11 @@ function checkPromoVoucher() {
     feedbackNode.style.display = "block";
 
     if (textCode === "PREMIUM20" || textCode === "MASTER20") {
-        tSingle.innerHTML = "<span style='text-decoration: line-through; color: #555555; margin-right: 8px;'>£6.25 / €7.50 / $7.50</span><span style='color: #00ff00; font-weight: bold;'>£5.00 / €6.00 / $6.00</span>";
-        tEp.innerHTML = "<span style='text-decoration: line-through; color: #555555; margin-right: 8px;'>£20.00 / €24.00 / $25.00</span><span style='color: #00ff00; font-weight: bold;'>£16.00 / €19.20 / $20.00</span>";
-        tAlbum.innerHTML = "<span style='text-decoration: line-through; color: #555555; margin-right: 8px;'>£50.00 / €60.00 / $60.00</span><span style='color: #00ff00; font-weight: bold;'>£40.00 / €48.00 / $48.00</span>";
-        tStem.innerHTML = "<span style='text-decoration: line-through; color: #555555; margin-right: 8px;'>£11.25 / €13.50 / $13.75</span><span style='color: #00ff00; font-weight: bold;'>£9.00 / €10.80 / $11.00</span>";
+        // Dynamic 20% discount execution from base values
+        tSingle.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£100.00 / €120.00 / $130.00</span> <span style='color: #00ff00;'>£80.00 / €96.00 / $104.00</span>";
+        tEp.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£320.00 / €384.00 / $416.00</span> <span style='color: #00ff00;'>£256.00 / €307.20 / $332.80</span>";
+        tAlbum.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£800.00 / €960.00 / $1,040.00</span> <span style='color: #00ff00;'>£640.00 / €768.00 / $832.00</span>";
+        tStem.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£180.00 / €216.00 / $234.00</span> <span style='color: #00ff00;'>£144.00 / €172.80 / $187.20</span>";
         
         feedbackNode.style.color = "#00ff00";
         feedbackNode.innerHTML = "Success: 20% promotional discount applied.";
@@ -160,6 +61,3 @@ function checkPromoVoucher() {
     }
 }
 </script>
-
-</body>
-</html>
