@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Global true black canvas */
+        /* Seamless deep black baseline */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* --- STABLE VERTICAL PHONE FLOW --- */
+        /* Stable column arrangement tracking */
         .page-wrapper {
             display: flex;
             flex-direction: column;
@@ -25,21 +25,29 @@
             height: 100vh;
         }
 
-        /* Pulls your exact newly cropped asset */
-        .graphic-block {
+        /* Container sections provide spatial boundaries */
+        .graphic-section {
             width: 100%;
             height: 35vh; 
-            background-image: url('detective-cropped.jpg');
-            background-repeat: no-repeat;
-            background-size: contain;
+            position: relative;
+            background-color: #000000;
         }
 
-        /* Top block: Left-aligned */
+        /* The actual floating figure layer */
+        .detective-asset {
+            position: absolute;
+            height: 100%;
+            width: auto; /* Let the crop choose its natural width proportions */
+        }
+
+        /* 1. TOP ZONE: Moved away from the left wall closer to the center */
         .top-left-man {
-            background-position: left top;
+            top: 0;
+            left: 0;
+            margin-left: 12%; /* Adjust this percentage to move him closer or further from center */
         }
 
-        /* Middle block: Centered Text Zone */
+        /* 2. MIDDLE ZONE: Content typography channel */
         .text-zone {
             width: 100%;
             height: 30vh;
@@ -49,13 +57,15 @@
             background-color: #000000;
         }
 
-        /* Bottom block: Mirrored for iOS Firefox layout stability */
+        /* 3. BOTTOM ZONE: Flipped horizontally and moved away from the right wall closer to the center */
         .bottom-right-man {
-            background-position: left bottom; 
-            transform: scaleX(-1); 
+            top: 0;
+            right: 0;
+            margin-right: 12%; /* Adjust this percentage to move him closer or further from center */
+            transform: scaleX(-1); /* Flips asset cleanly toward the text */
         }
 
-        /* Central Typography Presentation Layout */
+        /* Central Branding Presentation */
         .branding-centerpiece {
             width: 90%;
             max-width: 480px;
@@ -82,56 +92,6 @@
             font-weight: 300;
         }
 
-        /* --- UNIFIED DESKTOP & MAC PRO SYSTEM --- */
-        @media (min-width: 1025px) {
-            .page-wrapper {
-                position: relative;
-                display: block; /* Disables stacked boxes on desktop */
-            }
-
-            /* Breaks graphics out of constraints into absolute layout placements */
-            .graphic-block {
-                position: absolute;
-                width: 30vw;   /* Keeps figures perfectly scaled to screen width */
-                height: 45vh;  /* High rendering box limits */
-                z-index: 1;
-            }
-
-            .top-left-man {
-                top: 20px;
-                left: 20px;
-                background-position: left top;
-            }
-
-            .bottom-right-man {
-                bottom: 20px;
-                right: 20px;
-                top: auto;
-                background-position: left bottom;
-            }
-
-            /* Snaps content precisely to the absolute center of the Mac Pro display */
-            .text-zone {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: auto;
-                height: auto;
-                z-index: 10;
-                background-color: transparent;
-            }
-
-            .title {
-                font-size: 3.6rem; 
-                letter-spacing: 2px;
-            }
-
-            .tagline {
-                font-size: 1.6rem;
-            }
-        }
-
         @keyframes cleanFadeIn {
             to {
                 opacity: 1;
@@ -142,7 +102,9 @@
 <body>
 
     <div class="page-wrapper">
-        <div class="graphic-block top-left-man"></div>
+        <div class="graphic-section">
+            <img src="detective-cropped.jpg" class="detective-asset top-left-man" alt="Detective Left">
+        </div>
 
         <div class="text-zone">
             <div class="branding-centerpiece">
@@ -151,7 +113,9 @@
             </div>
         </div>
 
-        <div class="graphic-block bottom-right-man"></div>
+        <div class="graphic-section">
+            <img src="detective-cropped.jpg" class="detective-asset bottom-right-man" alt="Detective Right">
+        </div>
     </div>
 
 </body>
