@@ -1,240 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visible Mastering - Services & Equipment</title>
-    <style>
-        body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-        .wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h2 {
-            border-bottom: 2px solid #222222;
-            padding-bottom: 8px;
-            margin-top: 40px;
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
-        }
-        h3 {
-            margin-top: 25px;
-            margin-bottom: 5px;
-            font-size: 18px;
-            color: #ffffff;
-        }
-        .price-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        .price-list li {
-            padding: 14px 0;
-            border-bottom: 1px solid #1c1c1c;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .gear-list {
-            list-style-type: square;
-            padding-left: 20px;
-            color: #cccccc;
-        }
-        .gear-list li {
-            padding: 5px 0;
-        }
-        .bold-text {
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .italic-sub {
-            color: #777777;
-            font-size: 13px;
-            font-style: italic;
-            margin: 0 0 12px 0;
-        }
-        /* Promo Box Styling */
-        .promo-container {
-            background-color: #121212;
-            border: 1px solid #222222;
-            border-radius: 6px;
-            padding: 24px;
-            margin: 30px 0;
-        }
-        .promo-label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #ffffff;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .promo-row {
-            display: flex;
-            gap: 12px;
-        }
-        .promo-input {
-            flex: 1;
-            background-color: #000000;
-            color: #ffffff;
-            border: 1px solid #333333;
-            padding: 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-            text-transform: uppercase;
-        }
-        .promo-input:focus {
-            border-color: #555555;
-        }
-        .promo-btn {
-            background-color: #ffffff;
-            color: #000000;
-            border: none;
-            padding: 0 24px;
-            font-weight: bold;
-            font-size: 13px;
-            cursor: pointer;
-            border-radius: 4px;
-            text-transform: uppercase;
-            transition: opacity 0.2s;
-        }
-        .promo-btn:hover {
-            opacity: 0.9;
-        }
-        .promo-message {
-            margin: 12px 0 0 0;
-            font-size: 13px;
-            font-weight: bold;
-            display: none;
-        }
-    </style>
-</head>
-<body>
-
-<div class="wrapper">
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; color: #ffffff; text-align: left;">
 
     <h2>Mastering Services & Rates</h2>
-    <ul class="price-list">
-        <li>
-            <span class="bold-text">Single Track Mastering:</span> 
-            <span id="price-single">£6.25 / €7.50 / $7.50</span>
+    <ul style="list-style: none; padding: 0; margin: 20px 0;">
+        <li style="padding: 14px 0; border-bottom: 1px solid #1c1c1c; font-size: 16px;">
+            <strong style="color: #ffffff;">Single Track Mastering:</strong> 
+            <span id="rate-single" style="margin-left: 10px;">£6.25 / €7.50 / $7.50</span>
         </li>
-        <li>
-            <span class="bold-text">EP Mastering (Up to 4 Tracks):</span> 
-            <span id="price-ep">£20.00 / €24.00 / $25.00</span>
+        <li style="padding: 14px 0; border-bottom: 1px solid #1c1c1c; font-size: 16px;">
+            <strong style="color: #ffffff;">EP Mastering (Up to 4 Tracks):</strong> 
+            <span id="rate-ep" style="margin-left: 10px;">£20.00 / €24.00 / $25.00</span>
         </li>
-        <li>
-            <span class="bold-text">Full Album Mastering (Up to 12 Tracks):</span> 
-            <span id="price-album">£50.00 / €60.00 / $60.00</span>
+        <li style="padding: 14px 0; border-bottom: 1px solid #1c1c1c; font-size: 16px;">
+            <strong style="color: #ffffff;">Full Album Mastering (Up to 12 Tracks):</strong> 
+            <span id="rate-album" style="margin-left: 10px;">£50.00 / €60.00 / $60.00</span>
         </li>
-        <li>
-            <span class="bold-text">Stem Mastering (Per Track / Max 5 Stems):</span> 
-            <span id="price-stem">£11.25 / €13.50 / $13.75</span>
+        <li style="padding: 14px 0; border-bottom: 1px solid #1c1c1c; font-size: 16px;">
+            <strong style="color: #ffffff;">Stem Mastering (Per Track / Max 5 Stems):</strong> 
+            <span id="rate-stem" style="margin-left: 10px;">£11.25 / €13.50 / $13.75</span>
         </li>
     </ul>
 
-    <div class="promo-container">
-        <label for="promoInput" class="promo-label">Have a promotional code?</label>
-        <div class="promo-row">
-            <input type="text" id="promoInput" placeholder="Enter code here" class="promo-input">
-            <button onclick="applyPromoCode()" class="promo-btn">Apply</button>
+    <div style="background-color: #121212; border: 1px solid #222222; border-radius: 6px; padding: 20px; margin: 30px 0;">
+        <label for="promoField" style="display: block; font-weight: bold; margin-bottom: 10px; color: #ffffff; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Have a promotional code?
+        </label>
+        <div style="display: flex; gap: 12px;">
+            <input type="text" id="promoField" placeholder="Enter code here" style="flex: 1; background-color: #000000; color: #ffffff; border: 1px solid #333333; padding: 12px; border-radius: 4px; font-size: 14px; outline: none; text-transform: uppercase;">
+            <button onclick="checkPromoVoucher()" style="background-color: #ffffff; color: #000000; border: none; padding: 0 24px; font-weight: bold; font-size: 13px; cursor: pointer; border-radius: 4px; text-transform: uppercase;">
+                Apply
+            </button>
         </div>
-        <p id="promoMessage" class="promo-message"></p>
+        <p id="promoFeedback" style="margin: 12px 0 0 0; font-size: 13px; font-weight: bold; display: none;"></p>
     </div>
 
     <h2>Hardware Manifest</h2>
-    <ul class="gear-list">
-        <li><span class="bold-text">Universal Audio Apollo Quad</span> (Audio Interface / Routing)</li>
-        <li><span class="bold-text">Universal Audio UAD PCIe OctoCore</span> (DSP Acceleration)</li>
-        <li><span class="bold-text">Digidesign / Avid Command 8</span> (Tactile Control Surface)</li>
-        <li><span class="bold-text">Munro Sonic Egg 150 System</span> (Active Studio Monitor System)</li>
-        <li><span class="bold-text">Focusrite Scarlett OctoPre Dynamic</span> (Preamplification & Compression)</li>
-        <li><span class="bold-text">Behringer Tube Composer T1952</span> (Vacuum Tube Dynamics)</li>
-        <li><span class="bold-text">Behringer Multicom Pro</span> (Quad Compressor / Limiter)</li>
-        <li><span class="bold-text">Behringer Multigate Pro</span> (Quad Expander / Noise Gate)</li>
-        <li><span class="bold-text">Behringer Ultra-Graph Pro</span> (31-Band Graphic Equalizer)</li>
-        <li><span class="bold-text">Behringer Ultrapatch Pro</span> (24-Point Patchbay)</li>
-        <li><span class="bold-text">Roland SDE-1000</span> (Digital Delay)</li>
-        <li><span class="bold-text">Zoom Studio 1201</span> (Digital Multi-Effects)</li>
-        <li><span class="bold-text">Behringer Modulizer Pro</span> (Digital Spatial Effects)</li>
-        <li><span class="bold-text">Neumann U87Ai</span> (Large-Diaphragm Condenser Microphone)</li>
-        <li><span class="bold-text">Shure SM57</span> (Dynamic Microphone x2)</li>
-        <li><span class="bold-text">Audio-Technica AT3035</span> (Cardioid Condenser Microphone)</li>
-        <li><span class="bold-text">Guitar DI / Re-Amp Setup</span> (Direct Input & External Routing Available)</li>
-        <li><span class="bold-text">Marshall JMP Mk2 100W (1979)</span> (Vintage Valve Amplifier Head)</li>
-        <li><span class="bold-text">Marshall JCM900 50W (1990)</span> (High-Gain Valve Amplifier Head)</li>
-        <li><span class="bold-text">Marshall 1960B</span> (Standard Straight 4x12" Cabinet)</li>
-    </ul>
-
-    <h2>Software & Plugins</h2>
-    
-    <h3>Universal Audio UAD Powered Plug-Ins</h3>
-    <p class="italic-sub">(Precision analog-modeled emulations driven by UAD PCIe hardware DSP)</p>
-    <ul class="gear-list">
-        <li><span class="bold-text">UAD Core Processing:</span> Hardware-authentic console emulations, vintage compression legacy suites, and high-fidelity mastering processors optimized for the Apollo Quad ecosystem.</li>
-    </ul>
-
-    <h3>Waves Mercury + Studio Classics Bundle</h3>
-    <p class="italic-sub">(Comprehensive native processing suite for precision mastering, routing, and restoration)</p>
-    <ul class="gear-list">
-        <li><span class="bold-text">SSL Console Emulations:</span> SSL E-Channel, SSL G-Equalizer, SSL G-Master Buss Compressor</li>
-        <li><span class="bold-text">API Heritage Series:</span> API 2500, API 550, API 560</li>
-        <li><span class="bold-text">PuigTec Vintage Outboard:</span> PuigTec EQs, PuigChild Compressor</li>
-        <li><span class="bold-text">Renaissance Series:</span> Renaissance Compressor, Renaissance Equalizer, Renaissance Reverb, Renaissance Vox, Renaissance Bass, Renaissance Channel, Renaissance DeEsser, Renaissance Axx</li>
-        <li><span class="bold-text">L-Series Mastering Ultramaximizers:</span> L1, L2, L3, L3 Multimaximizer, L3-LL, L3-LL Multimaximizer, L3-16</li>
-        <li><span class="bold-text">Surround Sound (360°):</span> C360 Compressor, L360 Limiter, LFE360 Filter, S360 Imager/Panner, R360 Reverb, MV360</li>
-        <li><span class="bold-text">Restoration & Utilities:</span> X-Click, X-Crackle, X-Hum, X-Noise, Z-Noise, DeBreath, PAZ Analyzer, Dorrough Stereo, Dorrough Surround</li>
-        <li><span class="bold-text">Hybrid & V-Series:</span> V-Comp, V-EQ3, V-EQ4, H-Comp, H-Delay</li>
-        <li><span class="bold-text">Dynamics & Gain Staging:</span> C1 Compressor, C4 Multiband, MaxxBass, MaxxVolume, MV2, Center, Trans-X</li>
-        <li><span class="bold-text">Spatial, Modulation & Tuning:</span> S1 Stereo Imager, PS22 Stereo Maker, TrueVerb, SuperTap, UltraPitch, AudioTrack, Doppler, Enigma, MetaFlanger, MondoMod, Doubler, Morphoder, SoundShifter, Waves Tune, Waves Tune LT</li>
-        <li><span class="bold-text">Guitar Tool Rack:</span> GTR3 Amps, GTR3 Stomps, GTR3 Tuner, GTR3 ToolRack</li>
-    </ul>
-
-</div>
-
-<script>
-function applyPromoCode() {
-    var code = document.getElementById("promoInput").value.trim().toUpperCase();
-    var msg = document.getElementById("promoMessage");
-    
-    var single = document.getElementById("price-single");
-    var ep = document.getElementById("price-ep");
-    var album = document.getElementById("price-album");
-    var stem = document.getElementById("price-stem");
-
-    msg.style.display = "block";
-
-    if (code === "PREMIUM20" || code === "MASTER20") {
-        single.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£6.25 / €7.50 / $7.50</span> <span style='color: #00ff00;'>£5.00 / €6.00 / $6.00</span>";
-        ep.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£20.00 / €24.00 / $25.00</span> <span style='color: #00ff00;'>£16.00 / €19.20 / $20.00</span>";
-        album.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£50.00 / €60.00 / $60.00</span> <span style='color: #00ff00;'>£40.00 / €48.00 / $48.00</span>";
-        stem.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>£11.25 / €13.50 / $13.75</span> <span style='color: #00ff00;'>£9.00 / €10.80 / $11.00</span>";
-        
-        msg.style.color = "#00ff00";
-        msg.innerHTML = "Success: 20% promotional discount applied.";
-    } else if (code === "") {
-        msg.style.color = "#ff3333";
-        msg.innerHTML = "Error: Please enter a code.";
-    } else {
-        msg.style.color = "#ff3333";
-        msg.innerHTML = "Error: Invalid or expired promotional code.";
-    }
-}
-</script>
-
-</body>
-</html>
+    <ul style="list-style-type: square; padding-left: 20px; color: #cccccc; line-height: 1.8;">
+        <li><strong style="color: #ffffff;">Universal Audio Apollo Quad</strong> (Audio Interface / Routing)</li>
+        <li><strong style="color: #ffffff;">Universal Audio UAD PCIe OctoCore</strong> (DSP Acceleration)</li>
+        <li><strong style="color: #ffffff;">Digidesign / Avid Command 8</strong> (Tactile Control Surface)</li>
+        <li><strong style="color: #ffffff;">Munro Sonic Egg 150 System</strong> (Active Studio Monitor System)</li>
+        <li><strong style="color: #ffffff;">Focusrite Scarlett OctoPre Dynamic</strong> (Preamfication & Compression)</li>
+        <li><strong style="color: #ffffff;">Behringer Tube Composer T1952</strong> (Vacuum Tube Dynamics)</li>
+        <li><strong style="color: #ffffff;">Behringer Multicom Pro</strong> (Quad Compressor / Limiter)</li>
+        <li><strong style="color: #ffffff;">Behringer Multigate Pro</strong> (Quad Expander / Noise Gate)</li>
+        <li><strong style="color: #ffffff;">Behringer Ultra-Graph Pro</strong> (31-Band Graphic Equalizer)</li>
+        <li><strong style="color: #ffffff;">Behringer Ultrapatch Pro</strong> (24-Point Patchbay)</li>
+        <li><strong style="color: #ffffff;">Roland SDE-1000</strong> (Digital Delay)</li>
+        <li><strong style="color: #ffffff;">Zoom Studio 1201</strong> (Digital Multi-Effects)</li>
+        <li><strong style="color: #ffffff;">Behringer Modulizer Pro</strong> (Digital Spatial Effects)</li>
+        <li><strong style="color: #ffffff;">Neumann U87Ai</strong> (Large-Diaphragm Condenser Microphone)</li>
+        <li><strong style="color: #ffffff;">Shure SM57</strong> (Dynamic Microphone x2)</li>
+        <li><strong style="color: #ffffff;">Audio-Technica AT3035</strong> (Cardioid Condenser Microphone)</li>
+        <li><strong style="color: #ffffff;">Guitar DI / Re-Amp Setup</strong> (Direct Input & Routing Available)</li>
+        <li><strong style="color: #ffffff;">Marshall JMP
