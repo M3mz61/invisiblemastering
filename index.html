@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Establish a unified, overflow-hidden true black canvas */
+        /* Lock down a clean, true black mobile canvas */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* Full viewport manager keeping elements integrated */
+        /* Container that holds the background layers and the centered text */
         .viewport-container {
             position: relative;
             width: 100%;
@@ -27,36 +27,45 @@
             align-items: center;
         }
 
-        /* Graphic layer - locked to the left side and spanning top-to-bottom */
-        .character-bg {
+        /* Base settings for both detective graphics */
+        .detective-layer {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            height: 50vh; /* Takes up the top half of the visual space */
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
-            background-position: left center; /* Maintains your preferred left alignment */
             background-size: contain;
-            z-index: 1;
-            /* Ensures the image doesn't block touch interactions on mobile browsers */
-            pointer-events: none; 
+            pointer-events: none; /* Prevents clicks/taps from messing with the screen */
         }
 
-        /* Typography Overlay - mathematically centered over the viewport */
+        /* 1. Original Detective: Sitting naturally at the bottom-left */
+        .left-side {
+            top: 0;
+            left: 0;
+            background-position: left bottom;
+        }
+
+        /* 2. Mirrored Detective: Flipped and sitting at the bottom-right */
+        .right-side {
+            bottom: 0;
+            right: 0;
+            background-position: right bottom;
+            /* scaleX(-1) horizontally mirrors the image so he faces inward */
+            transform: scaleX(-1); 
+        }
+
+        /* Typography Overlay: Perfectly centered in the sweet spot between them */
         .branding-centerpiece {
             position: relative;
-            z-index: 2; /* Layered cleanly over the graphic canvas */
+            z-index: 10; 
             width: 90%;
             max-width: 500px;
             text-align: center;
             color: #ffffff;
-            /* Subtle shift upward to counter the mobile browser's bottom navigation bar visually */
-            transform: translateY(-5vh); 
             
-            /* Fluid entry animation sequence */
+            /* Smooth, clean fade-in entry */
             opacity: 0;
-            animation: cleanFadeIn 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.1s;
         }
 
@@ -71,7 +80,7 @@
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Subtle clean contrast gray */
+            color: #b5b5b7; /* Clean gray contrast tint */
             margin: 0;
             font-weight: 300;
         }
@@ -79,7 +88,6 @@
         @keyframes cleanFadeIn {
             to {
                 opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
@@ -87,7 +95,9 @@
 <body>
 
     <div class="viewport-container">
-        <div class="character-bg"></div>
+        <div class="detective-layer left-side"></div>
+
+        <div class="detective-layer right-side"></div>
 
         <div class="branding-centerpiece">
             <h1 class="title">Invisible Mastering Inc</h1>
