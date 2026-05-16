@@ -5,222 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering</title>
     <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
+        body, html {
             margin: 0;
             padding: 0;
-        }
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            overflow-x: hidden;
-            height: 100vh;
-            width: 100vw;
-        }
-        .studio-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            border: 4px solid #000000;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 30px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            z-index: 10;
-        }
-        .brand-title {
-            font-size: 24px;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            border-bottom: 3px solid #000000;
-            padding-bottom: 2px;
-        }
-        .nav-btn {
-            background: #000000;
-            color: #ffffff;
-            border: 2px solid #000000;
-            padding: 8px 16px;
-            cursor: pointer;
-            font-family: inherit;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .nav-btn:hover {
-            background: #ffffff;
-            color: #000000;
-        }
-        .canvas-zone {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
-            pointer-events: none;
+            overflow: hidden;
+            background-color: #0b0b0b;
         }
-        .vector-walker {
-            position: absolute;
-            bottom: 12%;
-            width: 140px;
-            height: 210px;
-            animation: walkCycle 18s linear infinite;
-        }
-        @keyframes walkCycle {
-            0% { transform: translateX(105vw); }
-            100% { transform: translateX(-20vw); }
-        }
-        footer {
-            display: flex;
-            justify-content: space-between;
-            border-top: 3px solid #000000;
-            padding-top: 10px;
-            font-size: 12px;
-            text-transform: uppercase;
-            z-index: 10;
-        }
-        .overlay-matrix {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .landing-bg {
             width: 100%;
             height: 100%;
-            background: #000000;
-            color: #ffffff;
-            z-index: 20;
-            padding: 40px;
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 4px solid #ffffff;
-        }
-        .overlay-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid #ffffff;
-            padding-bottom: 12px;
-        }
-        .statement-block {
-            margin-top: 30px;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            line-height: 1.6;
-            max-width: 800px;
-            text-transform: uppercase;
-            border-left: 4px solid #ffffff;
-            padding-left: 15px;
-        }
-        .rate-table {
-            width: 100%;
-            margin-top: 30px;
-            border-collapse: collapse;
-        }
-        .rate-table th {
-            text-align: left;
-            border-bottom: 2px dashed #ffffff;
-            padding-bottom: 8px;
-            text-transform: uppercase;
-            font-size: 13px;
-        }
-        .rate-table td {
-            padding: 16px 0;
-            border-bottom: 1px solid #333333;
-            font-size: 14px;
-        }
-        .rate-align-right {
-            text-align: right;
-            white-space: nowrap;
-        }
-        .email-node {
-            display: inline-block;
-            margin-top: auto;
-            color: #000000;
-            background: #ffffff;
-            text-decoration: none;
-            padding: 15px 30px;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 14px;
-            font-weight: bold;
-            border: 2px solid #ffffff;
-            width: fit-content;
-        }
-        .email-node:hover {
-            background: #000000;
-            color: #ffffff;
+            background-image: url('Invisible%20main%2001.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
         }
     </style>
 </head>
 <body>
-    <div class="studio-container">
-        <header>
-            <div class="brand-title">Invisible Mastering</div>
-            <button class="nav-btn" onclick="toggleOverlay(true)">[ Services & Rates ]</button>
-        </header>
-        <div class="canvas-zone">
-            <div class="vector-walker">
-                <svg viewBox="0 0 100 150" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <g fill="#000000">
-                        <path d="M30,25 C35,10 65,10 70,25 L75,27 L25,27 Z" />
-                        <path d="M38,27 L62,27 L60,38 L40,38 Z" />
-                        <path d="M20,40 L80,40 L85,60 L70,110 L30,110 L15,60 Z" />
-                        <path d="M32,110 L44,110 L40,145 L28,145 Z" />
-                        <path d="M56,110 L68,110 L64,145 L52,145 Z" />
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <footer>
-            <div>[ 24-Core System Array ]</div>
-            <div>[ Discrete Outboard Routing Matrix ]</div>
-            <div>[ Zero-Noise Engineering ]</div>
-        </footer>
-    </div>
-    <div class="overlay-matrix" id="priceOverlay">
-        <div>
-            <div class="overlay-header">
-                <h2>Operational Parameters & Rates</h2>
-                <button class="nav-btn" style="background:#ffffff; color:#000000; border-color:#ffffff;" onclick="toggleOverlay(false)">[ Close ]</button>
-            </div>
-            <div class="statement-block">
-                Mastering execution is conducted exclusively via human ghost/machine hybrid configuration utilizing digital and discrete analog hardware processing as dictated by the source material. Audio signal is the sole instrument of communication. Period.
-            </div>
-            <table class="rate-table">
-                <thead>
-                    <tr>
-                        <th>Service Description</th>
-                        <th class="rate-align-right">Fixed Rate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Stereo Audio Mastering (Single Track Archive Linear WAV / AIF)</td>
-                        <td class="rate-align-right">£50.00 / track</td>
-                    </tr>
-                    <tr>
-                        <td>Multi-Track Stem Mastering Array (Up to 8 Discrete Sub-Busses)</td>
-                        <td class="rate-align-right">£95.00 / set</td>
-                    </tr>
-                    <tr>
-                        <td>Vinyl Pre-Cut Phase & Dynamic Optimization Pass</td>
-                        <td class="rate-align-right">£65.00 / pass</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <a href="mailto:mehmet.osman101@gmail.com" class="email-node">Submit Inquiry</a>
-    </div>
-    <script>
-        function toggleOverlay(displayState) {
-            const overlay = document.getElementById('priceOverlay');
-            overlay.style.display = displayState ? 'flex' : 'none';
-        }
-    </script>
+    <div class="landing-bg"></div>
 </body>
 </html>
