@@ -5,53 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Full-viewport pitch black canvas setup */
+        /* Force a total true black canvas on the mobile viewport wrapper */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; 
+            background-color: #000000; /* Absolute deep true black */
             font-family: 'Times New Roman', Times, serif;
-            color: #ffffff;
-            text-align: center;
-        }
-
-        /* Set up a main container that fills the exact mobile screen size */
-        .wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Vertically centers the content inside */
             align-items: center;
+            box-sizing: border-box;
         }
 
-        /* Background artwork layer - locked to the left side */
-        .character-container {
-            position: absolute;
-            top: 5%;
-            left: 0;
+        /* Top Zone: Dedicated exclusively to displaying your left-aligned asset */
+        .character-zone {
             width: 100%;
-            height: 50vh; /* Fixed height container to give him clear definition */
+            height: 55vh; /* Locks his framing space to the upper half of the screen */
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
-            background-position: left center; /* Keeps your favorite left alignment intact */
-            background-size: contain;
-            pointer-events: none; /* Allows the screen to scale seamlessly */
+            background-position: left bottom; /* Keeps him beautifully sitting on the lower bound of his box */
+            background-size: contain; /* Assures he scales naturally without cropping out his hat or boots */
         }
 
-        /* Branding typography stack centered beautifully on the screen */
-        .branding {
-            position: relative;
-            z-index: 2; /* Ensures text floats crisply on top of any dark graphics boundaries */
-            margin-top: 35vh; /* Pushes text directly into a beautifully centered focal point */
-            padding: 0 20px;
+        /* Bottom Zone: Safely presents the branding elements centrally below him */
+        .branding-zone {
+            width: 100%;
+            height: 45vh; /* Balanced space for your text stack to breathe */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Aligns content cleanly from the top down */
+            align-items: center;
+            padding-top: 20px; /* Slight buffer spacing directly beneath your character asset */
+            color: #ffffff; /* Radiant brilliant white */
+            text-align: center;
+            
+            /* The elegant dropdown build-in animation sequence */
             opacity: 0;
             transform: translateY(-20px);
-            animation: clearDropDown 1.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: cleanDropDown 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             animation-delay: 0.2s;
         }
 
@@ -59,17 +53,18 @@
             font-size: 2.2rem;
             font-weight: 400;
             letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            margin: 0 0 12px 0;
         }
 
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Classic clean off-white contrast accent */
+            color: #b5b5b7; /* Subtle clean gray accent layer */
             font-weight: 300;
+            margin: 0;
         }
 
-        @keyframes clearDropDown {
+        @keyframes cleanDropDown {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -79,13 +74,11 @@
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="character-container"></div>
+    <div class="character-zone"></div>
 
-        <div class="branding">
-            <div class="title">Invisible Mastering Inc</div>
-            <div class="tagline">Heard, but not seen.</div>
-        </div>
+    <div class="branding-zone">
+        <h1 class="title">Invisible Mastering Inc</h1>
+        <p class="tagline">Heard, but not seen.</p>
     </div>
 
 </body>
