@@ -59,9 +59,49 @@
             font-weight: 400;
             letter-spacing: 2px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-transform: uppercase;
         }
+
+        /* --- PROMO CODE ENTRY BOX STYLE --- */
+        .promo-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        .promo-input {
+            background-color: #000000;
+            border: 1px solid #333335;
+            color: #ffffff;
+            padding: 8px 12px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            width: 160px;
+            outline: none;
+        }
+        .promo-input:focus {
+            border-color: #ffffff;
+        }
+        .promo-btn {
+            background-color: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 8px 16px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .promo-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
         .section-title {
             font-size: 1.4rem;
             font-weight: 400;
@@ -108,7 +148,7 @@
             z-index: 2;
         }
         
-        /* Promotion Cross-out Styling */
+        /* Promotion Slashes */
         .original-price {
             font-size: 1.1rem;
             text-decoration: line-through;
@@ -150,7 +190,20 @@
             font-weight: 300;
         }
 
-        /* --- HARDWARE MANIFEST SYSTEM --- */
+        /* --- CONTACT BLOCK --- */
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px dotted #ffffff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .contact-link:hover {
+            color: #b5b5b7;
+            border-color: #b5b5b7;
+        }
+
+        /* --- HARDWARE MANIFEST DRAWER --- */
         .manifest-trigger {
             display: block;
             width: 100%;
@@ -207,7 +260,7 @@
             font-weight: 400;
         }
 
-        /* View State Panels */
+        /* Swapping view-state panel properties */
         .rate-panel {
             display: none;
         }
@@ -233,7 +286,12 @@
     <div class="container">
         <h1 class="page-title" id="dynamic-title">Rates & Services</h1>
 
-        <div id="panel-standard" class="rate-panel">
+        <div class="promo-container">
+            <input type="text" id="promo-field" class="promo-input" placeholder="Promo Code">
+            <button class="promo-btn" onclick="applyPromoCode()">Apply</button>
+        </div>
+
+        <div id="panel-standard" class="rate-panel active-panel">
             <h2 class="section-title">Mastering</h2>
             
             <div class="service-tier">
@@ -268,7 +326,7 @@
         </div>
 
         <div id="panel-promo" class="rate-panel">
-            <h2 class="section-title">Introductory Offer (25% Off)</h2>
+            <h2 class="section-title">Introductory Offer (25% Applied)</h2>
             
             <div class="service-tier">
                 <div class="menu-item">
@@ -350,6 +408,11 @@
         <p class="info-text">
             Please export files at their native sample rate, leaving at least -3dB to -6dB of headroom on the master bus. Ensure no heavy brickwall limiters or clipping plug-ins are active on your final export track output.
         </p>
+
+        <h2 class="section-title">Booking & Files</h2>
+        <p class="info-text">
+            To submit stereo mixdown files, confirm studio openings, or request custom rate sheets, contact engineering directly at: <a href="mailto:invisiblemastering@gmail.com" class="contact-link">invisiblemastering@gmail.com</a>
+        </p>
     </div>
 
     <script>
@@ -365,46 +428,29 @@
             }
         }
 
-        // --- AUTOMATED PSEUDO-RANDOM TIMING SWITCHER ---
-        (function() {
-            const today = new Date();
-            const currentYear = today.getFullYear();
+        // --- PROMO CODE LOGIC CONTROL MATRIX ---
+        function applyPromoCode() {
+            var enteredCode = document.getElementById('promo-field').value.trim().toUpperCase();
             
-            // Get current ISO Week Number (1 to 53)
-            const target = new Date(today.valueOf());
-            const dayNr = (today.getDay() + 6) % 7;
-            target.setDate(target.getDate() - dayNr + 3);
-            const firstThursday = target.valueOf();
-            target.setMonth(0, 1);
-            if (target.getDay() !== 4) {
-                target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
-            }
-            const weekNumber = 1 + Math.ceil((firstThursday - target) / 604800000);
-            
-            const currentDayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+            // CHOOSE YOUR PROMO CODE KEY HERE (Currently set to: LAUNCH25)
+            var masterSecretCode = "LAUNCH25";
 
-            // Seeded hash based purely on the week number and year to select 2 consistent random days every week
-            function getPromoDays(week, year) {
-                let hash = (week * 17) + (year * 31);
-                let day1 = (hash % 7);
-                let day2 = ((hash + 3) % 7);
-                if (day1 === day2) {
-                    day2 = (day2 + 1) % 7;
-                }
-                return [day1, day2];
-            }
-
-            const promoDays = getPromoDays(weekNumber, currentYear);
-
-            // Activate layout based on generated random schedule matches
-            if (promoDays.includes(currentDayOfWeek)) {
+            if (enteredCode === masterSecretCode) {
+                // Hide standard view, reveal promo sashes
+                document.getElementById('panel-standard').classList.remove('active-panel');
                 document.getElementById('panel-promo').classList.add('active-panel');
-                document.getElementById('dynamic-title').innerText = "Special Promotion";
+                document.getElementById('dynamic-title').innerText = "Special Event Active";
+                alert("Promo Applied: 25% Off Reduction Active.");
             } else {
+                // Reset back to standard views if empty or wrong
+                document.getElementById('panel-promo').classList.remove('active-panel');
                 document.getElementById('panel-standard').classList.add('active-panel');
                 document.getElementById('dynamic-title').innerText = "Rates & Services";
+                if (enteredCode !== "") {
+                    alert("Invalid Promotion Code code entry.");
+                }
             }
-        })();
+        }
     </script>
 
 </body>
