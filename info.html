@@ -1,73 +1,26 @@
-<div style="background-color: #000000; color: #ffffff; padding: 20px; font-family: Arial, sans-serif;">
+<h2>MASTERING SERVICES & RATES</h2>
+<ul style="list-style: none; padding: 0; margin: 20px 0;">
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">Single Track Mastering:</span> 
+        <span id="rate-single" style="float: right; font-weight: bold;">£100.00 / €120.00 / $130.00</span>
+    </li>
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">EP Mastering (Up to 4 Tracks):</span> 
+        <span id="rate-ep" style="float: right; font-weight: bold;">£320.00 / €384.00 / $416.00</span>
+    </li>
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">Full Album Mastering (Up to 12 Tracks):</span> 
+        <span id="rate-album" style="float: right; font-weight: bold;">£800.00 / €960.00 / $1,040.00</span>
+    </li>
+    <li style="padding: 14px 0; border-bottom: 1px solid #222222; font-size: 16px; overflow: hidden; clear: both;">
+        <span style="float: left; font-weight: bold;">Stem Mastering (Per Track / Max 5 Stems):</span> 
+        <span id="rate-stem" style="float: right; font-weight: bold;">£180.00 / €216.00 / $234.00</span>
+    </li>
+</ul>
 
-    <h3 style="font-family: 'Times New Roman', Times, serif; letter-spacing: 2px; border-bottom: 1px solid #222222; padding-bottom: 8px; margin-top: 20px; color: #ffffff; text-transform: uppercase; font-size: 18px;">
-        MASTERING TIERS
-    </h3>
-
-    <ul style="list-style: none; padding: 0; margin: 20px 0;">
-        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">Single Track</div>
-            <div style="text-align: right;">
-                <div id="rate-single-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£100</div>
-                <div id="rate-single-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€120 &nbsp;/&nbsp; $130</div>
-            </div>
-        </li>
-
-        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">EP Mastering (Up to 4 Tracks)</div>
-            <div style="text-align: right;">
-                <div id="rate-ep-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£320</div>
-                <div id="rate-ep-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€384 &nbsp;/&nbsp; $416</div>
-            </div>
-        </li>
-
-        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">Full Album Mastering (Up to 12 Tracks)</div>
-            <div style="text-align: right;">
-                <div id="rate-album-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£800</div>
-                <div id="rate-album-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€960 &nbsp;/&nbsp; $1,040</div>
-            </div>
-        </li>
-
-        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">Stem Mastering (Per Track / Max 5 Stems)</div>
-            <div style="text-align: right;">
-                <div id="rate-stem-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£180</div>
-                <div id="rate-stem-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€216 &nbsp;/&nbsp; $234</div>
-            </div>
-        </li>
-    </ul>
-
-    <div style="margin: 40px auto 20px auto; padding: 20px; border: 1px solid #222222; background-color: #000000; clear: both;">
-        <label for="promoField" style="display: block; font-weight: bold; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #aaaaaa;">
-            Have a promotional code?
-        </label>
-        <div style="display: flex; gap: 10px;">
-            <input type="text" id="promoField" placeholder="Enter code here" style="flex: 1; padding: 12px; font-size: 14px; background-color: #000000; color: #ffffff; border: 1px solid #333333; outline: none; text-transform: uppercase;">
-            <button onclick="checkPromoVoucher()" style="padding: 0 20px; font-size: 12px; font-weight: bold; background-color: #ffffff; color: #000000; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;">
-                Apply
-            </button>
-        </div>
-        <p id="promoFeedback" style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; display: none; text-transform: uppercase; letter-spacing: 0.5px;"></p>
-    </div>
-
-</div>
-
-<script>
-function checkPromoVoucher() {
-    var textCode = document.getElementById("promoField").value.trim().toUpperCase();
-    var feedbackNode = document.getElementById("promoFeedback");
-    
-    var sMain = document.getElementById("rate-single-main");
-    var sSub = document.getElementById("rate-single-sub");
-    var eMain = document.getElementById("rate-ep-main");
-    var eSub = document.getElementById("rate-ep-sub");
-    var aMain = document.getElementById("rate-album-main");
-    var aSub = document.getElementById("rate-album-sub");
-    var stMain = document.getElementById("rate-stem-main");
-    var stSub = document.getElementById("rate-stem-sub");
-
-    feedbackNode.style.display = "block";
-
-    if (textCode === "PREMIUM20" || textCode === "MASTER20") {
-        sMain.innerHTML = "<span style='text-decoration: line-through; color: #555555; font-size: 16px; margin-right: 8px;'>£100</span><span
+<div style="margin: 35px 0; padding: 20px; border: 1px solid #222222; background-color: #121212; border-radius: 4px; clear: both;">
+    <label for="promoField" style="display: block; font-weight: bold; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
+        Have a promotional code?
+    </label>
+    <div style="display: flex; gap: 12px;">
+        <input type="text" id="promoField" placeholder="Enter code here" style="flex: 1; padding: 12px; font-size: 14px; background-color: #000000; color: #ffffff; border: 1px solid #33
