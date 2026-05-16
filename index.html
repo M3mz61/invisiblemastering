@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Unmovable true black viewport canvas baseline */
+        /* True black mobile viewport foundation */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* --- MOBILE MODE (Preserving your working smartphone layout exactly) --- */
+        /* Stacks the three layout blocks vertically */
         .page-wrapper {
             display: flex;
             flex-direction: column;
@@ -25,12 +25,14 @@
             height: 100vh;
         }
 
+        /* Fixed container block dimensions */
         .graphic-block {
             width: 100%;
             height: 35vh; 
             position: relative;
         }
 
+        /* 1. TOP BLOCK: Original graphic anchored cleanly to the top-left */
         .top-left-man {
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
@@ -38,6 +40,7 @@
             background-position: left top;
         }
 
+        /* 2. MIDDLE BLOCK: Pure black gap for content text */
         .text-zone {
             width: 100%;
             height: 30vh;
@@ -47,7 +50,9 @@
             background-color: #000000;
         }
 
-        /* Mirror logic targets only the background asset inside the wrapper */
+        /* 3. BOTTOM BLOCK: Mirrored position layer
+           Uses a pseudo-element to mirror ONLY the image graphic
+           without flipping the layout container alignment rules. */
         .bottom-right-man::before {
             content: "";
             position: absolute;
@@ -58,16 +63,20 @@
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
             background-size: contain;
+            /* Anchors graphic position to the bottom right of its own block */
             background-position: right bottom; 
+            /* Horizontally mirrors the figure inward toward the text channel */
             transform: scaleX(-1); 
         }
 
-        /* Center branding text styles */
+        /* Central Typography Zone */
         .branding-centerpiece {
             width: 90%;
             max-width: 480px;
             text-align: center;
             color: #ffffff;
+            
+            /* Smooth fade-in presentation */
             opacity: 0;
             animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.1s;
@@ -89,63 +98,6 @@
             font-weight: 300;
         }
 
-        /* --- MAC PRO / DESKTOP SPECIFIC CARDFRAME OVERRIDES --- */
-        @media (min-width: 1025px) {
-            .page-wrapper {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                display: block; /* Disables the mobile vertical stacking behavior */
-            }
-
-            /* Transforms blocks into floating playing-card corner nodes */
-            .graphic-block {
-                position: absolute;
-                width: 25vw;   /* Sized elegantly relative to display width */
-                height: 45vh;  /* Gives the file plenty of canvas breathing room */
-                z-index: 1;
-            }
-
-            /* Absolute Top Left Anchor */
-            .top-left-man {
-                top: 0;
-                left: 0;
-                background-position: left top;
-            }
-
-            /* Absolute Bottom Right Anchor */
-            .bottom-right-man {
-                bottom: 0;
-                right: 0;
-                top: auto; 
-            }
-
-            .bottom-right-man::before {
-                background-position: right bottom;
-            }
-
-            /* Locks the typography centerpiece directly to the center of your Mac screen */
-            .text-zone {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: auto;
-                height: auto;
-                z-index: 10;
-                background-color: transparent;
-            }
-
-            .title {
-                font-size: 3.5rem; /* Upgraded premium footprint for large screens */
-                letter-spacing: 2px;
-            }
-
-            .tagline {
-                font-size: 1.6rem;
-            }
-        }
-
         @keyframes cleanFadeIn {
             to {
                 opacity: 1;
@@ -163,10 +115,3 @@
                 <h1 class="title">Invisible Mastering Inc</h1>
                 <p class="tagline">Heard, but not seen.</p>
             </div>
-        </div>
-
-        <div class="graphic-block bottom-right-man"></div>
-    </div>
-
-</body>
-</html>
