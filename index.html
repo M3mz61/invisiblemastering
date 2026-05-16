@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Setup a unified, absolute true black screen */
+        /* Establish a unified, overflow-hidden true black canvas */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; /* Pure true black */
+            background-color: #000000; 
             font-family: 'Times New Roman', Times, serif;
             box-sizing: border-box;
         }
 
-        /* The main wrapper that locks everything into a single screen frame */
-        .viewport-wrapper {
+        /* Full viewport manager keeping elements integrated */
+        .viewport-container {
             position: relative;
             width: 100%;
             height: 100%;
@@ -27,8 +27,8 @@
             align-items: center;
         }
 
-        /* Background artwork layer - spans full width to prevent any box seams */
-        .character-background {
+        /* Graphic layer - locked to the left side and spanning top-to-bottom */
+        .character-bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -36,45 +36,47 @@
             height: 100%;
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
-            background-position: left center; /* Keeps your favorite left-aligned orientation */
+            background-position: left center; /* Maintains your preferred left alignment */
             background-size: contain;
             z-index: 1;
+            /* Ensures the image doesn't block touch interactions on mobile browsers */
+            pointer-events: none; 
         }
 
-        /* Typography branding stack - layered beautifully over the background */
-        .branding-overlay {
+        /* Typography Overlay - mathematically centered over the viewport */
+        .branding-centerpiece {
             position: relative;
-            z-index: 2; /* Sits sharply on top of the image */
+            z-index: 2; /* Layered cleanly over the graphic canvas */
             width: 90%;
-            max-width: 450px;
+            max-width: 500px;
             text-align: center;
-            color: #ffffff; /* Brilliant white text */
-            margin-top: 25vh; /* Shifts the text up into a proud, central real-estate position */
+            color: #ffffff;
+            /* Subtle shift upward to counter the mobile browser's bottom navigation bar visually */
+            transform: translateY(-5vh); 
             
-            /* Smooth drop-down entry animation */
+            /* Fluid entry animation sequence */
             opacity: 0;
-            transform: translateY(-20px);
-            animation: elegantDropDown 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            animation-delay: 0.2s;
+            animation: cleanFadeIn 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 0.1s;
         }
 
         .title {
             font-size: 2.2rem;
             font-weight: 400;
             letter-spacing: 1.5px;
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
             line-height: 1.2;
         }
 
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Clean off-white contrast layer */
+            color: #b5b5b7; /* Subtle clean contrast gray */
             margin: 0;
             font-weight: 300;
         }
 
-        @keyframes elegantDropDown {
+        @keyframes cleanFadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -84,10 +86,10 @@
 </head>
 <body>
 
-    <div class="viewport-wrapper">
-        <div class="character-background"></div>
+    <div class="viewport-container">
+        <div class="character-bg"></div>
 
-        <div class="branding-overlay">
+        <div class="branding-centerpiece">
             <h1 class="title">Invisible Mastering Inc</h1>
             <p class="tagline">Heard, but not seen.</p>
         </div>
