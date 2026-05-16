@@ -1,80 +1,193 @@
-<div class="studio-container" style="max-width: 800px; margin: 20px auto; font-family: sans-serif; text-align: center;">
-    
-    <button onclick="toggleMainEquipment()" style="background-color: #111; color: #fff; border: 1px solid #333; padding: 12px 24px; font-size: 18px; cursor: pointer; border-radius: 4px; width: 100%; font-weight: bold; letter-spacing: 1px;">
-        🎛️ STUDIO EQUIPMENT
-    </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible Mastering Inc - Studio Equipment</title>
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .page-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .studio-container {
+            margin: 30px auto;
+            text-align: center;
+        }
+        .main-toggle-btn {
+            background-color: #161616;
+            color: #ffffff;
+            border: 1px solid #333;
+            padding: 16px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+            width: 100%;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        .main-toggle-btn:hover {
+            background-color: #222;
+            border-color: #555;
+        }
+        .dropdown-content {
+            display: none;
+            margin-top: 20px;
+            background: #121212;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            text-align: left;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .tab-system {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+        #btnHardware {
+            background: #cdcdcd;
+            color: #111;
+            border: 1px solid #fff;
+        }
+        #btnSoftware {
+            background: #1c1c1c;
+            color: #888;
+            border: 1px solid #2a2a2a;
+        }
+        .equipment-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .equipment-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 15px;
+        }
+        .equipment-list li strong {
+            color: #fff;
+        }
+        .software-section {
+            margin-bottom: 30px;
+        }
+        .software-section h4 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            border-left: 3px solid #cdcdcd;
+            padding-left: 10px;
+        }
+        .software-section p {
+            font-size: 13px;
+            color: #777;
+            font-style: italic;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+<body>
 
-    <div id="equipmentDropdown" style="display: none; margin-top: 15px; background: #1a1a1a; padding: 20px; border-radius: 6px; border: 1px solid #222; text-align: left;">
+<div class="page-wrapper">
+
+    <div class="studio-container">
         
-        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <button onclick="showSubCategory('hardware')" id="btnHardware" style="flex: 1; background: #333; color: #fff; border: none; padding: 10px; font-weight: bold; cursor: pointer; border-radius: 4px; transition: 0.2s;">
-                Hardware Manifest
-            </button>
-            <button onclick="showSubCategory('software')" id="btnSoftware" style="flex: 1; background: #222; color: #aaa; border: none; padding: 10px; font-weight: bold; cursor: pointer; border-radius: 4px; transition: 0.2s;">
-                Software & Plugins
-            </button>
-        </div>
+        <button onclick="toggleMainEquipment()" class="main-toggle-btn">
+            🎛️ STUDIO EQUIPMENT
+        </button>
 
-        <div id="hardwareList" style="display: block; color: #ddd; line-height: 1.6;">
-            <ul style="list-style-type: square; padding-left: 20px;">
-                <li><strong>Universal Audio Apollo Quad</strong> (Audio Interface / Routing)</li>
-                <li><strong>Universal Audio UAD PCIe OctoCore</strong> (DSP Acceleration)</li>
-                <li><strong>Digidesign / Avid Command 8</strong> (Tactile Control Surface)</li>
-                <li><strong>Munro Sonic Egg 150 System</strong> (Active Studio Monitor System)</li>
-                <li><strong>Focusrite Scarlett OctoPre Dynamic</strong> (Preamplification & Compression)</li>
-                <li><strong>Behringer Tube Composer T1952</strong> (Vacuum Tube Dynamics)</li>
-                <li><strong>Behringer Multicom Pro</strong> (Quad Compressor / Limiter)</li>
-                <li><strong>Behringer Multigate Pro</strong> (Quad Expander / Noise Gate)</li>
-                <li><strong>Behringer Ultra-Graph Pro</strong> (31-Band Graphic Equalizer)</li>
-                <li><strong>Behringer Ultrapatch Pro</strong> (24-Point Patchbay)</li>
-                <li><strong>Roland SDE-1000</strong> (Digital Delay)</li>
-                <li><strong>Zoom Studio 1201</strong> (Digital Multi-Effects)</li>
-                <li><strong>Behringer Modulizer Pro</strong> (Digital Spatial Effects)</li>
-                <li><strong>Neumann U87Ai</strong> (Large-Diaphragm Condenser Microphone)</li>
-                <li><strong>Shure SM57</strong> (Dynamic Microphone x2)</li>
-                <li><strong>Audio-Technica AT3035</strong> (Cardioid Condenser Microphone)</li>
-                <li><strong>Guitar DI / Re-Amp Setup</strong> (Direct Input & External Routing Available)</li>
-                <li><strong>Marshall JMP Mk2 100W (1979)</strong> (Vintage Valve Amplifier Head)</li>
-                <li><strong>Marshall JCM900 50W (1990)</strong> (High-Gain Valve Amplifier Head)</li>
-                <li><strong>Marshall 1960B</strong> (Standard Straight 4x12" Cabinet)</li>
-            </ul>
-        </div>
+        <div id="equipmentDropdown" class="dropdown-content">
+            
+            <div class="tab-system">
+                <button onclick="showSubCategory('hardware')" id="btnHardware" class="tab-btn">
+                    Hardware Manifest
+                </button>
+                <button onclick="showSubCategory('software')" id="btnSoftware" class="tab-btn">
+                    Software & Plugins
+                </button>
+            </div>
 
-        <div id="softwareList" style="display: none; color: #ddd; line-height: 1.6;">
-            <div style="margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 15px;">
-                <h4 style="color: #fff; margin-bottom: 5px;">Universal Audio UAD Powered Plug-Ins</h4>
-                <p style="font-size: 13px; color: #888; font-style: italic; margin: 0 0 10px 0;">(Precision analog-modeled emulations driven by dedicated on-board UAD PCIe OctoCore hardware DSP)</p>
-                <ul style="list-style-type: disc; padding-left: 20px;">
-                    <li><strong>UAD Core Processing:</strong> Hardware-authentic console emulations, vintage compression legacy suites, and high-fidelity mastering processors optimized for the Apollo Quad ecosystem.</li>
+            <div id="hardwareList" style="display: block;">
+                <ul class="equipment-list">
+                    <li><strong>Universal Audio Apollo Quad</strong> (Audio Interface / Routing)</li>
+                    <li><strong>Universal Audio UAD PCIe OctoCore</strong> (DSP Acceleration)</li>
+                    <li><strong>Digidesign / Avid Command 8</strong> (Tactile Control Surface)</li>
+                    <li><strong>Munro Sonic Egg 150 System</strong> (Active Studio Monitor System)</li>
+                    <li><strong>Focusrite Scarlett OctoPre Dynamic</strong> (Preamplification & Compression)</li>
+                    <li><strong>Behringer Tube Composer T1952</strong> (Vacuum Tube Dynamics)</li>
+                    <li><strong>Behringer Multicom Pro</strong> (Quad Compressor / Limiter)</li>
+                    <li><strong>Behringer Multigate Pro</strong> (Quad Expander / Noise Gate)</li>
+                    <li><strong>Behringer Ultra-Graph Pro</strong> (31-Band Graphic Equalizer)</li>
+                    <li><strong>Behringer Ultrapatch Pro</strong> (24-Point Patchbay)</li>
+                    <li><strong>Roland SDE-1000</strong> (Digital Delay)</li>
+                    <li><strong>Zoom Studio 1201</strong> (Digital Multi-Effects)</li>
+                    <li><strong>Behringer Modulizer Pro</strong> (Digital Spatial Effects)</li>
+                    <li><strong>Neumann U87Ai</strong> (Large-Diaphragm Condenser Microphone)</li>
+                    <li><strong>Shure SM57</strong> (Dynamic Microphone x2)</li>
+                    <li><strong>Audio-Technica AT3035</strong> (Cardioid Condenser Microphone)</li>
+                    <li><strong>Guitar DI / Re-Amp Setup</strong> (Direct Input & External Routing Available)</li>
+                    <li><strong>Marshall JMP Mk2 100W (1979)</strong> (Vintage Valve Amplifier Head)</li>
+                    <li><strong>Marshall JCM900 50W (1990)</strong> (High-Gain Valve Amplifier Head)</li>
+                    <li><strong>Marshall 1960B</strong> (Standard Straight 4x12" Cabinet)</li>
                 </ul>
             </div>
 
-            <div>
-                <h4 style="color: #fff; margin-bottom: 5px;">Waves Mercury + Studio Classics Bundle</h4>
-                <p style="font-size: 13px; color: #888; font-style: italic; margin: 0 0 10px 0;">(Comprehensive native processing suite for precision mastering, routing, and restoration)</p>
-                <ul style="list-style-type: disc; padding-left: 20px; font-size: 14px;">
-                    <li><strong>SSL Console Emulations:</strong> SSL E-Channel, SSL G-Equalizer, SSL G-Master Buss Compressor</li>
-                    <li><strong>API Heritage Series:</strong> API 2500, API 550, API 560</li>
-                    <li><strong>PuigTec Vintage Outboard:</strong> PuigTec EQs, PuigChild Compressor</li>
-                    <li><strong>Renaissance Series:</strong> Renaissance Compressor, Renaissance Equalizer, Renaissance Reverb, Renaissance Vox, Renaissance Bass, Renaissance Channel, Renaissance DeEsser, Renaissance Axx</li>
-                    <li><strong>L-Series Mastering Ultramaximizers:</strong> L1, L2, L3, L3 Multimaximizer, L3-LL, L3-LL Multimaximizer, L3-16</li>
-                    <li><strong>Surround Sound (360°):</strong> C360 Compressor, L360 Limiter, LFE360 Filter, S360 Imager/Panner, R360 Reverb, MV360</li>
-                    <li><strong>Restoration & Utilities:</strong> X-Click, X-Crackle, X-Hum, X-Noise, Z-Noise, DeBreath, PAZ Analyzer, Dorrough Stereo, Dorrough Surround</li>
-                    <li><strong>Hybrid & V-Series:</strong> V-Comp, V-EQ3, V-EQ4, H-Comp, H-Delay</li>
-                    <li><strong>Dynamics & Gain Staging:</strong> C1 Compressor, C4 Multiband, MaxxBass, MaxxVolume, MV2, Center, Trans-X</li>
-                    <li><strong>Spatial, Modulation & Tuning:</strong> S1 Stereo Imager, PS22 Stereo Maker, TrueVerb, SuperTap, UltraPitch, AudioTrack, Doppler, Enigma, MetaFlanger, MondoMod, Doubler, Morphoder, SoundShifter, Waves Tune, Waves Tune LT</li>
-                    <li><strong>Guitar Tool Rack:</strong> GTR3 Amps, GTR3 Stomps, GTR3 Tuner, GTR3 ToolRack</li>
-                </ul>
-            </div>
-        </div>
+            <div id="softwareList" style="display: none;">
+                <div class="software-section">
+                    <h4>Universal Audio UAD Powered Plug-Ins</h4>
+                    <p>(Precision analog-modeled emulations driven by dedicated on-board UAD PCIe OctoCore hardware DSP)</p>
+                    <ul class="equipment-list">
+                        <li><strong>UAD Core Processing:</strong> Hardware-authentic console emulations, vintage compression legacy suites, and high-fidelity mastering processors optimized for the Apollo Quad ecosystem.</li>
+                    </ul>
+                </div>
 
+                <div class="software-section" style="border-top: 1px solid #222; padding-top: 20px;">
+                    <h4>Waves Mercury + Studio Classics Bundle</h4>
+                    <p>(Comprehensive native processing suite for precision mastering, routing, and restoration)</p>
+                    <ul class="equipment-list">
+                        <li><strong>SSL Console Emulations:</strong> SSL E-Channel, SSL G-Equalizer, SSL G-Master Buss Compressor</li>
+                        <li><strong>API Heritage Series:</strong> API 2500, API 550, API 560</li>
+                        <li><strong>PuigTec Vintage Outboard:</strong> PuigTec EQs, PuigChild Compressor</li>
+                        <li><strong>Renaissance Series:</strong> Renaissance Compressor, Renaissance Equalizer, Renaissance Reverb, Renaissance Vox, Renaissance Bass, Renaissance Channel, Renaissance DeEsser, Renaissance Axx</li>
+                        <li><strong>L-Series Mastering Ultramaximizers:</strong> L1, L2, L3, L3 Multimaximizer, L3-LL, L3-LL Multimaximizer, L3-16</li>
+                        <li><strong>Surround Sound (360°):</strong> C360 Compressor, L360 Limiter, LFE360 Filter, S360 Imager/Panner, R360 Reverb, MV360</li>
+                        <li><strong>Restoration & Utilities:</strong> X-Click, X-Crackle, X-Hum, X-Noise, Z-Noise, DeBreath, PAZ Analyzer, Dorrough Stereo, Dorrough Surround</li>
+                        <li><strong>Hybrid & V-Series:</strong> V-Comp, V-EQ3, V-EQ4, H-Comp, H-Delay</li>
+                        <li><strong>Dynamics & Gain Staging:</strong> C1 Compressor, C4 Multiband, MaxxBass, MaxxVolume, MV2, Center, Trans-X</li>
+                        <li><strong>Spatial, Modulation & Tuning:</strong> S1 Stereo Imager, PS22 Stereo Maker, TrueVerb, SuperTap, UltraPitch, AudioTrack, Doppler, Enigma, MetaFlanger, MondoMod, Doubler, Morphoder, SoundShifter, Waves Tune, Waves Tune LT</li>
+                        <li><strong>Guitar Tool Rack:</strong> GTR3 Amps, GTR3 Stomps, GTR3 Tuner, GTR3 ToolRack</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
+    </div>
 
 <script>
 function toggleMainEquipment() {
     var dropdown = document.getElementById("equipmentDropdown");
-    if (dropdown.style.display === "none") {
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
         dropdown.style.display = "block";
     } else {
         dropdown.style.display = "none";
@@ -90,19 +203,28 @@ function showSubCategory(category) {
     if (category === 'hardware') {
         hwList.style.display = "block";
         swList.style.display = "none";
-        // Button Styles
-        btnHw.style.background = "#333";
-        btnHw.style.color = "#fff";
-        btnSw.style.background = "#222";
-        btnSw.style.color = "#aaa";
+        
+        btnHw.style.background = "#cdcdcd";
+        btnHw.style.color = "#111";
+        btnHw.style.border = "1px solid #fff";
+        
+        btnSw.style.background = "#1c1c1c";
+        btnSw.style.color = "#888";
+        btnSw.style.border = "1px solid #2a2a2a";
     } else {
         hwList.style.display = "none";
         swList.style.display = "block";
-        // Button Styles
-        btnSw.style.background = "#333";
-        btnSw.style.color = "#fff";
-        btnHw.style.background = "#222";
-        btnHw.style.color = "#aaa";
+        
+        btnSw.style.background = "#cdcdcd";
+        btnSw.style.color = "#111";
+        btnSw.style.border = "1px solid #fff";
+        
+        btnHw.style.background = "#1c1c1c";
+        btnHw.style.color = "#888";
+        btnHw.style.border = "1px solid #2a2a2a";
     }
 }
 </script>
+
+</body>
+</html>
