@@ -1,123 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invisible Mastering Inc - Services & Equipment</title>
-    <style>
-        body {
-            background-color: #0b0b0b;
-            color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h2 {
-            color: #ffffff;
-            border-bottom: 2px solid #222;
-            padding-bottom: 8px;
-            margin-top: 40px;
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        h3 {
-            color: #ffffff;
-            margin: 20px 0 5px 0;
-            font-size: 16px;
-        }
-        p.subtitle {
-            margin: 0 0 15px 0;
-            font-size: 13px;
-            color: #777;
-            font-style: italic;
-        }
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-            line-height: 1.8;
-            color: #cccccc;
-            font-size: 15px;
-        }
-        ul.prices {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        ul.prices li {
-            padding: 10px 0;
-            border-bottom: 1px solid #161616;
-            font-size: 16px;
-        }
-        strong {
-            color: #ffffff;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <h2>💳 Mastering Services & Rates</h2>
-    <ul class="prices">
-        <li><strong>Single Track Mastering:</strong> £6.25 / $7.50</li>
-        <li><strong>EP Mastering (Up to 4 Tracks):</strong> £20.00 / $25.00</li>
-        <li><strong>Full Album Mastering (Up to 12 Tracks):</strong> £50.00 / $60.00</li>
-        <li><strong>Stem Mastering (Per Track / Max 5 Stems):</strong> £11.25 / $13.75</li>
-    </ul>
-
-    <h2>🎛️ Hardware Manifest</h2>
-    <ul>
-        <li><strong>Universal Audio Apollo Quad</strong> (Audio Interface / Routing)</li>
-        <li><strong>Universal Audio UAD PCIe OctoCore</strong> (DSP Acceleration)</li>
-        <li><strong>Digidesign / Avid Command 8</strong> (Tactile Control Surface)</li>
-        <li><strong>Munro Sonic Egg 150 System</strong> (Active Studio Monitor System)</li>
-        <li><strong>Focusrite Scarlett OctoPre Dynamic</strong> (Preamplification & Compression)</li>
-        <li><strong>Behringer Tube Composer T1952</strong> (Vacuum Tube Dynamics)</li>
-        <li><strong>Behringer Multicom Pro</strong> (Quad Compressor / Limiter)</li>
-        <li><strong>Behringer Multigate Pro</strong> (Quad Expander / Noise Gate)</li>
-        <li><strong>Behringer Ultra-Graph Pro</strong> (31-Band Graphic Equalizer)</li>
-        <li><strong>Behringer Ultrapatch Pro</strong> (24-Point Patchbay)</li>
-        <li><strong>Roland SDE-1000</strong> (Digital Delay)</li>
-        <li><strong>Zoom Studio 1201</strong> (Digital Multi-Effects)</li>
-        <li><strong>Behringer Modulizer Pro</strong> (Digital Spatial Effects)</li>
-        <li><strong>Neumann U87Ai</strong> (Large-Diaphragm Condenser Microphone)</li>
-        <li><strong>Shure SM57</strong> (Dynamic Microphone x2)</li>
-        <li><strong>Audio-Technica AT3035</strong> (Cardioid Condenser Microphone)</li>
-        <li><strong>Guitar DI / Re-Amp Setup</strong> (Direct Input & External Routing Available)</li>
-        <li><strong>Marshall JMP Mk2 100W (1979)</strong> (Vintage Valve Amplifier Head)</li>
-        <li><strong>Marshall JCM900 50W (1990)</strong> (High-Gain Valve Amplifier Head)</li>
-        <li><strong>Marshall 1960B</strong> (Standard Straight 4x12" Cabinet)</li>
-    </ul>
-
-    <h2>💿 Software & Plugins</h2>
+<div style="max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif;">
     
-    <h3>Universal Audio UAD Powered Plug-Ins</h3>
-    <p class="subtitle">(Precision analog-modeled emulations driven by UAD PCIe hardware DSP)</p>
-    <ul>
-        <li><strong>UAD Core Processing:</strong> Hardware-authentic console emulations, vintage compression legacy suites, and high-fidelity mastering processors optimized for the Apollo Quad ecosystem.</li>
+    <h2>Mastering Services & Rates</h2>
+    
+    <ul class="price-list" style="list-style: none; padding: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #111;">
+            <span class="bold-text">Single Track Mastering:</span> 
+            <span id="price-single">£6.25 / €7.50 / $7.50</span>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #111;">
+            <span class="bold-text">EP Mastering (Up to 4 Tracks):</span> 
+            <span id="price-ep">£20.00 / €24.00 / $25.00</span>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #111;">
+            <span class="bold-text">Full Album Mastering (Up to 12 Tracks):</span> 
+            <span id="price-album">£50.00 / €60.00 / $60.00</span>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #111;">
+            <span class="bold-text">Stem Mastering (Per Track / Max 5 Stems):</span> 
+            <span id="price-stem">£11.25 / €13.50 / $13.75</span>
+        </li>
     </ul>
 
-    <h3 style="margin-top: 30px;">Waves Mercury + Studio Classics Bundle</h3>
-    <p class="subtitle">(Comprehensive native processing suite for precision mastering, routing, and restoration)</p>
-    <ul>
-        <li><strong>SSL Console Emulations:</strong> SSL E-Channel, SSL G-Equalizer, SSL G-Master Buss Compressor</li>
-        <li><strong>API Heritage Series:</strong> API 2500, API 550, API 560</li>
-        <li><strong>PuigTec Vintage Outboard:</strong> PuigTec EQs, PuigChild Compressor</li>
-        <li><strong>Renaissance Series:</strong> Renaissance Compressor, Renaissance Equalizer, Renaissance Reverb, Renaissance Vox, Renaissance Bass, Renaissance Channel, Renaissance DeEsser, Renaissance Axx</li>
-        <li><strong>L-Series Mastering Ultramaximizers:</strong> L1, L2, L3, L3 Multimaximizer, L3-LL, L3-LL Multimaximizer, L3-16</li>
-        <li><strong>Surround Sound (360°):</strong> C360 Compressor, L360 Limiter, LFE360 Filter, S360 Imager/Panner, R360 Reverb, MV360</li>
-        <li><strong>Restoration & Utilities:</strong> X-Click, X-Crackle, X-Hum, X-Noise, Z-Noise, DeBreath, PAZ Analyzer, Dorrough Stereo, Dorrough Surround</li>
-        <li><strong>Hybrid & V-Series:</strong> V-Comp, V-EQ3, V-EQ4, H-Comp, H-Delay</li>
-        <li><strong>Dynamics & Gain Staging:</strong> C1 Compressor, C4 Multiband, MaxxBass, MaxxVolume, MV2, Center, Trans-X</li>
-        <li><strong>Spatial, Modulation & Tuning:</strong> S1 Stereo Imager, PS22 Stereo Maker, TrueVerb, SuperTap, UltraPitch, AudioTrack, Doppler, Enigma, MetaFlanger, MondoMod, Doubler, Morphoder, SoundShifter, Waves Tune, Waves Tune LT</li>
-        <li><strong>Guitar Tool Rack:</strong> GTR3 Amps, GTR3 Stomps, GTR3 Tuner, GTR3 ToolRack</li>
-    </ul>
+    <div style="background-color: #111111; border: 1px solid #222222; border-radius: 6px; padding: 20px; margin-top: 25px; text-align: left;">
+        <label for="promoInput" style="display: block; font-weight: bold; margin-bottom: 8px; color: #ffffff; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Have a promotional code?
+        </label>
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="promoInput" placeholder="Enter code here" style="flex: 1; background-color: #000000; color: #ffffff; border: 1px solid #333333; padding: 10px; border-radius: 4px; font-size: 14px; outline: none;">
+            <button onclick="applyPromoCode()" style="background-color: #ffffff; color: #000000; border: none; padding: 10px 20px; font-weight: bold; font-size: 14px; cursor: pointer; border-radius: 4px; text-transform: uppercase; transition: background 0.2s;">
+                Apply
+            </button>
+        </div>
+        <p id="promoMessage" style="margin: 10px 0 0 0; font-size: 13px; font-weight: bold; display: none;"></p>
+    </div>
 
 </div>
 
-</body>
-</html>
+<script>
+function applyPromoCode() {
+    var code = document.getElementById("promoInput").value.trim().toUpperCase();
+    var msg = document.getElementById("promoMessage");
+    
+    // Target Elements
+    var single = document.getElementById("price-single");
+    var ep = document.getElementById("price-ep");
+    var album = document.getElementById("price-album");
+    var stem = document.getElementById("price-stem");
+
+    // Clear previous status style rules
+    msg.style.display = "block";
+
+    if (code === "PREMIUM20" || code === "MASTER20") {
+        // Apply 20% tier calculations to the base 1/4 layout values
+        single.innerHTML = "<span style='text-decoration: line-through; color: #555;'>£6.25 / €7.50 / $7.50</span> <span style='color: #00ff00;'>£5.00 / €6.00 / $6.00</span>";
+        ep.innerHTML = "<span style='text-decoration: line-through; color: #555;'>£20.00 / €24.00 / $25.00</span> <span style='color: #00ff00;'>£16.00 / €19.20 / $20.00</span>";
+        album.innerHTML = "<span style='text-decoration: line-through; color: #555;'>£50.00 / €60.00 / $60.00</span> <span style='color: #00ff00;'>£40.00 / €48.00 / $48.00</span>";
+        stem.innerHTML = "<span style='text-decoration: line-through; color: #555;'>£11.25 / €13.50 / $13.75</span> <span style='color: #00ff00;'>£9.00 / €10.80 / $11.00</span>";
+        
+        msg.style.color = "#00ff00";
+        msg.innerHTML = "Success: 20% promotional discount applied to your order.";
+    } else if (code === "") {
+        msg.style.color = "#ff3333";
+        msg.innerHTML = "Error: Please enter a valid code string before applying.";
+    } else {
+        msg.style.color = "#ff3333";
+        msg.innerHTML = "Error: Invalid or expired promotional voucher code.";
+    }
+}
+</script>
