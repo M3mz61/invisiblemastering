@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Info | Invisible Mastering Inc</title>
+    <title>Rates & Services | Invisible Mastering Inc</title>
     <style>
         body, html {
             margin: 0;
@@ -17,7 +17,7 @@
         }
         .header-block {
             width: 100%;
-            height: 25vh; 
+            height: 32vh; 
             position: relative;
             background-color: #000000;
         }
@@ -73,8 +73,6 @@
             color: #b5b5b7;
             text-transform: uppercase;
         }
-        
-        /* Multi-currency multi-line service module */
         .service-tier {
             margin-bottom: 30px;
         }
@@ -102,7 +100,7 @@
         }
         .item-price {
             font-size: 1.25rem;
-            font-weight: bold;
+            font-weight: 700;
             padding-left: 10px;
             color: #ffffff;
             background: #000000;
@@ -132,10 +130,66 @@
             margin-bottom: 20px;
             font-weight: 300;
         }
+
+        /* --- MANIFEST TOGGLE DRAWER --- */
+        .manifest-trigger {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            border: 1px dashed #444446;
+            color: #b5b5b7;
+            padding: 14px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 30px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .manifest-trigger:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+        .manifest-content {
+            display: none;
+            background-color: #050505;
+            border: 1px solid #1c1c1e;
+            padding: 25px;
+            margin-top: 15px;
+            animation: cleanFadeIn 0.5s ease-out forwards;
+        }
+        .gear-group-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #1c1c1e;
+            padding-bottom: 4px;
+        }
+        .gear-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+        .gear-list li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #b5b5b7;
+            margin-bottom: 6px;
+            font-style: italic;
+        }
+        .gear-list li strong {
+            font-style: normal;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
         @keyframes cleanFadeIn {
-            to {
-                opacity: 1;
-            }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -152,7 +206,7 @@
     <div class="container">
         <h1 class="page-title">Rates & Services</h1>
 
-        <h2 class="section-title">Mastering</h2>
+        <h2 class="section-title">Standard Mastering</h2>
         
         <div class="service-tier">
             <div class="menu-item">
@@ -160,12 +214,8 @@
                 <span class="item-leader"></span>
                 <span class="item-price">£100</span>
             </div>
-            <div class="conversion-row">
-                <span>€120</span>
-                <span>/</span>
-                <span>$130</span>
-            </div>
-            <p class="item-description">Stereo mastering optimized for all streaming platforms and digital distribution channels.</p>
+            <div class="conversion-row"><span>€120</span><span>/</span><span>$130</span></div>
+            <p class="item-description">Stereo mastering optimized for all major streaming platforms and digital distribution channels.</p>
         </div>
 
         <div class="service-tier">
@@ -174,9 +224,66 @@
                 <span class="item-leader"></span>
                 <span class="item-price">£170</span>
             </div>
-            <div class="conversion-row">
-                <span>€200</span>
-                <span>/</span>
-                <span>$215</span>
+            <div class="conversion-row"><span>€200</span><span>/</span><span>$215</span></div>
+            <p class="item-description">Up to 5 separate sub-mix stems for precision instrument balance, deep stereo width, and total control.</p>
+        </div>
+
+        <div class="service-tier">
+            <div class="menu-item">
+                <span class="item-name">EP Package (4-6 Tracks)</span>
+                <span class="item-leader"></span>
+                <span class="item-price">£425</span>
             </div>
-            <p class="item-description
+            <div class="conversion-row"><span>€500</span><span>/</span><span>$540</span></div>
+            <p class="item-description">Comprehensive sonic balancing across your entire project file profile for a cohesive record flow.</p>
+        </div>
+
+        <h2 class="section-title">Studio Info</h2>
+        <p class="info-text">
+            Invisible Mastering Inc provides world-class sonic finishes, ensuring your translations remain pristine across high-end sound systems, car stereos, and mobile devices alike. 
+        </p>
+
+        <button class="manifest-trigger" onclick="toggleManifest()">+ View Studio Setup & Specs</button>
+        
+        <div id="gear-manifest" class="manifest-content">
+            <div class="gear-group-title">Monitoring & Acoustics</div>
+            <ul class="gear-list">
+                <li><strong>ATC SCM25A Pro</strong> Three-way active reference standard systems</li>
+                <li><strong>Sennheiser HD800S</strong> Critical open-back space translation matrices</li>
+                <li><strong>Trinnov Audio Nova</strong> Hardware speaker calibration & phase correction environment</li>
+            </ul>
+
+            <div class="gear-group-title">Analog Processing Chain</div>
+            <ul class="gear-list">
+                <li><strong>Bettermaker Mastering Limiter</strong> Digital recall controlled hybrid ceiling compression</li>
+                <li><strong>Maselec MEA-2</strong> Precision stepped precision analog equalization routing</li>
+                <li><strong>SSL Fusion</strong> Stereo bus coloring, spatial widening, and transformer drive engine</li>
+            </ul>
+
+            <div class="gear-group-title">Digital Blueprint / Software</div>
+            <ul class="gear-list">
+                <li><strong>Sonnox Oxford Elite Suite</strong> Surgical filters and phase-linear dynamics control</li>
+                <li><strong>FabFilter Pro-Q3 & Pro-L2</strong> High-resolution brickwall analysis path loops</li>
+                <li><strong>iZotope RX Advanced</strong> Spectral audio restoration and structural click attenuation</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">Preparation</h2>
+        <p class="info-text">
+            Please export files at their native sample rate, leaving at least -3dB to -6dB of headroom on the master bus. Ensure no heavy brickwall limiters or clipping plug-ins are active on your final export track output.
+        </p>
+    </div>
+
+    <script>
+        function toggleManifest() {
+            var content = document.getElementById("gear-manifest");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
