@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Pristine, true black mobile canvas environment */
+        /* Lock down a pristine, unified true black mobile viewport wrapper */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* Full viewport master frame */
+        /* The master container holding all independent layers */
         .viewport-container {
             position: relative;
             width: 100%;
@@ -27,42 +27,43 @@
             align-items: center;
         }
 
-        /* Base settings for the background graphics */
+        /* Base rules for the corner graphics layers */
         .detective-layer {
             position: absolute;
             width: 100%;
-            height: 45vh; /* Prevents the image from crowding the screen height-wise */
+            height: 38vh; /* Keeps the graphics sized perfectly for phone screens */
             background-image: url('Invisible%20man%201.png');
             background-repeat: no-repeat;
             background-size: contain;
-            pointer-events: none; /* Keeps the screen fully tappable */
+            pointer-events: none; /* Keeps the screen responsive to scrolling or clicks */
+            z-index: 1;
         }
 
-        /* 1. Upper-Left Corner: Positioned at the top, facing right */
+        /* 1. Upper-Left Corner: Anchored at the top, naturally facing right */
         .upper-left {
             top: 0;
             left: 0;
             background-position: left top;
         }
 
-        /* 2. Bottom-Right Corner: Positioned at the bottom, flipped to face left */
+        /* 2. Bottom-Right Corner: Anchored at the bottom, flipped to face left */
         .bottom-right {
             bottom: 0;
             right: 0;
             background-position: right bottom;
-            transform: scaleX(-1); /* Horizontally mirrors the image */
+            transform: scaleX(-1); /* Correctly mirrors the image horizontally */
         }
 
-        /* Typography Zone: Securely centered right in the middle of the diagonal split */
+        /* Central Typography Zone: Floating perfectly in the sweet spot between them */
         .branding-centerpiece {
             position: relative;
-            z-index: 10; 
-            width: 85%;
+            z-index: 10; /* Ensures text stays sharply on top */
+            width: 90%;
             max-width: 480px;
             text-align: center;
             color: #ffffff;
             
-            /* Smooth fade-in entry */
+            /* Clean, elegant fade-in animation */
             opacity: 0;
             animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.1s;
@@ -79,7 +80,7 @@
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Crisp off-white contrast */
+            color: #b5b5b7; /* Subtle off-white for text hierarchy */
             margin: 0;
             font-weight: 300;
         }
