@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* Creates an unmovable, seamless absolute black canvas */
+        /* Setup a unified, absolute true black screen canvas */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; /* True deep black */
+            background-color: #000000; /* Pure digital black */
             font-family: 'Times New Roman', Times, serif;
             box-sizing: border-box;
         }
 
-        /* Full screen master container */
+        /* Full screen master relative wrapper container */
         .viewport-container {
             position: relative;
             width: 100%;
@@ -27,34 +27,42 @@
             align-items: center;
         }
 
-        /* Core rules for your floating background figures */
-        .detective-asset {
+        /* Base rules for the corner graphics layers */
+        .detective-layer {
             position: absolute;
-            max-width: 45vw; /* Prevents figures from crowding out the center text */
-            max-height: 38vh;
-            pointer-events: none;
-            
-            /* CRITICAL: Blends the image background perfectly into the true black page */
-            mix-blend-mode: screen; 
+            width: 60vw; 
+            height: 38vh; 
+            background-image: url('Invisible%20man%201.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none; /* Keeps screen interactions responsive */
+            z-index: 1;
+
+            /* PHOTOSHOP LAYER BLENDING: 
+               This drops out the off-black charcoal box background entirely, 
+               blending it perfectly into the #000000 body canvas. */
+            mix-blend-mode: lighten; 
         }
 
-        /* 1. TOP LEFT CORNER: Facing right naturally */
+        /* 1. Upper-Left Corner: Anchored top-left, naturally facing right */
         .upper-left {
-            top: 2%;
-            left: 2%;
+            top: 0;
+            left: 0;
+            background-position: left top;
         }
 
-        /* 2. BOTTOM RIGHT CORNER: Mirrored and facing left */
+        /* 2. Bottom-Right Corner: Anchored bottom-right, flipped to face left */
         .bottom-right {
-            bottom: 2%;
-            right: 2%;
-            transform: scaleX(-1); /* Flips him cleanly to frame the text */
+            bottom: 0;
+            right: 0;
+            background-position: right bottom;
+            transform: scaleX(-1); /* Horizontal mirror flip */
         }
 
-        /* Typography Piece: Centered exactly in the open diagonal space */
+        /* Central Typography Zone: Floating perfectly clear of background boxes */
         .branding-centerpiece {
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Keeps text layered sharply on top */
             width: 90%;
             max-width: 460px;
             text-align: center;
@@ -77,7 +85,7 @@
         .tagline {
             font-size: 1.2rem;
             font-style: italic;
-            color: #b5b5b7; /* Balanced clean contrast */
+            color: #b5b5b7; /* Balanced clean contrast tint */
             margin: 0;
             font-weight: 300;
         }
@@ -92,9 +100,9 @@
 <body>
 
     <div class="viewport-container">
-        <img src="Invisible%20man%201.png" alt="" class="detective-asset upper-left">
+        <div class="detective-layer upper-left"></div>
 
-        <img src="Invisible%20man%201.png" alt="" class="detective-asset bottom-right">
+        <div class="detective-layer bottom-right"></div>
 
         <div class="branding-centerpiece">
             <h1 class="title">Invisible Mastering Inc</h1>
