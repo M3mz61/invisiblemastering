@@ -1,52 +1,56 @@
-<h3 style="font-family: 'Times New Roman', Times, serif; letter-spacing: 2px; border-bottom: 1px solid #222222; padding-bottom: 8px; margin-top: 40px; color: #ffffff; text-transform: uppercase; font-size: 18px;">
-    MASTERING TIERS
-</h3>
+<div style="background-color: #000000; color: #ffffff; padding: 20px; font-family: Arial, sans-serif;">
 
-<ul style="list-style: none; padding: 0; margin: 20px 0; font-family: Arial, sans-serif;">
-    <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-        <div style="font-size: 16px; color: #ffffff;">Single Track</div>
-        <div style="text-align: right;">
-            <div id="rate-single-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£100</div>
-            <div id="rate-single-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€120 &nbsp;/&nbsp; $130</div>
+    <h3 style="font-family: 'Times New Roman', Times, serif; letter-spacing: 2px; border-bottom: 1px solid #222222; padding-bottom: 8px; margin-top: 20px; color: #ffffff; text-transform: uppercase; font-size: 18px;">
+        MASTERING TIERS
+    </h3>
+
+    <ul style="list-style: none; padding: 0; margin: 20px 0;">
+        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
+            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">Single Track</div>
+            <div style="text-align: right;">
+                <div id="rate-single-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£100</div>
+                <div id="rate-single-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€120 &nbsp;/&nbsp; $130</div>
+            </div>
+        </li>
+
+        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
+            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">EP Mastering (Up to 4 Tracks)</div>
+            <div style="text-align: right;">
+                <div id="rate-ep-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£320</div>
+                <div id="rate-ep-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€384 &nbsp;/&nbsp; $416</div>
+            </div>
+        </li>
+
+        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
+            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">Full Album Mastering (Up to 12 Tracks)</div>
+            <div style="text-align: right;">
+                <div id="rate-album-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£800</div>
+                <div id="rate-album-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€960 &nbsp;/&nbsp; $1,040</div>
+            </div>
+        </li>
+
+        <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
+            <div style="font-size: 16px; color: #ffffff; font-weight: bold;">Stem Mastering (Per Track / Max 5 Stems)</div>
+            <div style="text-align: right;">
+                <div id="rate-stem-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£180</div>
+                <div id="rate-stem-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€216 &nbsp;/&nbsp; $234</div>
+            </div>
+        </li>
+    </ul>
+
+    <div style="margin: 40px auto 20px auto; padding: 20px; border: 1px solid #222222; background-color: #000000; clear: both;">
+        <label for="promoField" style="display: block; font-weight: bold; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #aaaaaa;">
+            Have a promotional code?
+        </label>
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="promoField" placeholder="Enter code here" style="flex: 1; padding: 12px; font-size: 14px; background-color: #000000; color: #ffffff; border: 1px solid #333333; outline: none; text-transform: uppercase;">
+            <button onclick="checkPromoVoucher()" style="padding: 0 20px; font-size: 12px; font-weight: bold; background-color: #ffffff; color: #000000; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;">
+                Apply
+            </button>
         </div>
-    </li>
-
-    <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-        <div style="font-size: 16px; color: #ffffff;">EP Mastering (Up to 4 Tracks)</div>
-        <div style="text-align: right;">
-            <div id="rate-ep-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£320</div>
-            <div id="rate-ep-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€384 &nbsp;/&nbsp; $416</div>
-        </div>
-    </li>
-
-    <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-        <div style="font-size: 16px; color: #ffffff;">Full Album Mastering (Up to 12 Tracks)</div>
-        <div style="text-align: right;">
-            <div id="rate-album-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£800</div>
-            <div id="rate-album-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€960 &nbsp;/&nbsp; $1,040</div>
-        </div>
-    </li>
-
-    <li style="padding: 16px 0; border-bottom: 1px solid #111111; display: flex; justify-content: space-between; align-items: baseline;">
-        <div style="font-size: 16px; color: #ffffff;">Stem Mastering (Per Track / Max 5 Stems)</div>
-        <div style="text-align: right;">
-            <div id="rate-stem-main" style="font-size: 20px; font-weight: bold; color: #ffffff; font-family: 'Times New Roman', serif;">£180</div>
-            <div id="rate-stem-sub" style="font-size: 13px; color: #888888; font-style: italic; margin-top: 2px;">€216 &nbsp;/&nbsp; $234</div>
-        </div>
-    </li>
-</ul>
-
-<div style="margin: 40px auto; padding: 20px; border: 1px solid #222222; background-color: #000000; clear: both;">
-    <label for="promoField" style="display: block; font-weight: bold; margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #aaaaaa;">
-        Have a promotional code?
-    </label>
-    <div style="display: flex; gap: 10px;">
-        <input type="text" id="promoField" placeholder="Enter code here" style="flex: 1; padding: 12px; font-size: 14px; background-color: #000000; color: #ffffff; border: 1px solid #333333; outline: none; text-transform: uppercase;">
-        <button onclick="checkPromoVoucher()" style="padding: 0 20px; font-size: 12px; font-weight: bold; background-color: #ffffff; color: #000000; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;">
-            Apply
-        </button>
+        <p id="promoFeedback" style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; display: none; text-transform: uppercase; letter-spacing: 0.5px;"></p>
     </div>
-    <p id="promoFeedback" style="margin: 14px 0 0 0; font-size: 13px; font-weight: bold; display: none; text-transform: uppercase; letter-spacing: 0.5px;"></p>
+
 </div>
 
 <script>
@@ -66,26 +70,4 @@ function checkPromoVoucher() {
     feedbackNode.style.display = "block";
 
     if (textCode === "PREMIUM20" || textCode === "MASTER20") {
-        sMain.innerHTML = "<span style='text-decoration: line-through; color: #555555; font-size: 16px; margin-right: 8px;'>£100</span><span style='color: #00ff00;'>£80</span>";
-        sSub.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>€120 / $130</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€96 / $104</span>";
-        
-        eMain.innerHTML = "<span style='text-decoration: line-through; color: #555555; font-size: 16px; margin-right: 8px;'>£320</span><span style='color: #00ff00;'>£256</span>";
-        eSub.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>€384 / $416</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€307.20 / $332.80</span>";
-        
-        aMain.innerHTML = "<span style='text-decoration: line-through; color: #555555; font-size: 16px; margin-right: 8px;'>£800</span><span style='color: #00ff00;'>£640</span>";
-        aSub.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>€960 / $1,040</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€768 / $832</span>";
-        
-        stMain.innerHTML = "<span style='text-decoration: line-through; color: #555555; font-size: 16px; margin-right: 8px;'>£180</span><span style='color: #00ff00;'>£144</span>";
-        stSub.innerHTML = "<span style='text-decoration: line-through; color: #555555;'>€216 / $234</span> &nbsp;&nbsp; <span style='color: #00ff00;'>€172.80 / $187.20</span>";
-        
-        feedbackNode.style.color = "#00ff00";
-        feedbackNode.innerHTML = "Success: 20% promotional discount applied.";
-    } else if (textCode === "") {
-        feedbackNode.style.color = "#ff3333";
-        feedbackNode.innerHTML = "Error: Please enter a code.";
-    } else {
-        feedbackNode.style.color = "#ff3333";
-        feedbackNode.innerHTML = "Error: Invalid code.";
-    }
-}
-</script>
+        sMain.innerHTML = "<span style='text-decoration: line-through; color: #555555; font-size: 16px; margin-right: 8px;'>£100</span><span
