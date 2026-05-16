@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
-        /* True deep black baseline canvas */
+        /* Matches the background of your image crop perfectly so the boxes melt away */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000000; 
+            background-color: #0d0d11; 
             font-family: 'Times New Roman', Times, serif;
             box-sizing: border-box;
         }
@@ -34,24 +34,22 @@
             background-size: contain;
         }
 
-        /* 1. TOP BLOCK: Shifts the figure away from the left wall towards the center */
+        /* 1. TOP BLOCK: Keeps your preferred center distance */
         .top-left-man {
-            background-position: 20% top; /* Raised from 0% to pull him closer to center */
+            background-position: 20% top; 
         }
 
-        /* 2. MIDDLE BLOCK: Dedicated pure typography channel */
+        /* 2. MIDDLE BLOCK: Blends seamlessly with the rest of the canvas */
         .text-zone {
             width: 100%;
             height: 30vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000000;
+            background-color: #0d0d11;
         }
 
-        /* 3. BOTTOM BLOCK: Mirrored position layer 
-           Flips the element horizontally. Because the container coordinates mirror, 
-           setting background position to 20% pushes him inward from the right wall. */
+        /* 3. BOTTOM BLOCK: Keeps your preferred center distance and mirrors */
         .bottom-right-man {
             background-position: 20% bottom; 
             transform: scaleX(-1); 
