@@ -44,7 +44,6 @@ function checkPromoVoucher() {
     feedbackNode.style.display = "block";
 
     if (textCode === "PREMIUM20" || textCode === "MASTER20") {
-        // Dynamic 20% discount execution from base values
         tSingle.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£100.00 / €120.00 / $130.00</span> <span style='color: #00ff00;'>£80.00 / €96.00 / $104.00</span>";
         tEp.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£320.00 / €384.00 / $416.00</span> <span style='color: #00ff00;'>£256.00 / €307.20 / $332.80</span>";
         tAlbum.innerHTML = "<span style='text-decoration: line-through; color: #666666; margin-right: 8px;'>£800.00 / €960.00 / $1,040.00</span> <span style='color: #00ff00;'>£640.00 / €768.00 / $832.00</span>";
