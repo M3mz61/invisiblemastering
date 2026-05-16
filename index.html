@@ -25,18 +25,17 @@
             height: 100vh;
         }
 
-        /* Fixed container block dimensions */
+        /* Fixed container block dimensions matching your screenshot precisely */
         .graphic-block {
             width: 100%;
             height: 35vh; 
-            position: relative;
+            background-image: url('Invisible%20man%201.png');
+            background-repeat: no-repeat;
+            background-size: contain;
         }
 
         /* 1. TOP BLOCK: Original graphic anchored cleanly to the top-left */
         .top-left-man {
-            background-image: url('Invisible%20man%201.png');
-            background-repeat: no-repeat;
-            background-size: contain;
             background-position: left top;
         }
 
@@ -51,21 +50,11 @@
         }
 
         /* 3. BOTTOM BLOCK: Mirrored position layer
-           Uses a pseudo-element to mirror ONLY the image graphic
-           without flipping the layout container alignment rules. */
-        .bottom-right-man::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Invisible%20man%201.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            /* Anchors graphic position to the bottom right of its own block */
-            background-position: right bottom; 
-            /* Horizontally mirrors the figure inward toward the text channel */
+           Flips the entire block horizontally. Because the block is flipped, 
+           setting background-position to "left" makes it visually render 
+           on the RIGHT side of the iPhone screen in Firefox. */
+        .bottom-right-man {
+            background-position: left bottom; 
             transform: scaleX(-1); 
         }
 
