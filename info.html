@@ -49,7 +49,8 @@
             width: 85%;
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px 0 100px 0; /* Extra room at the bottom so scrolling feels natural */
+            /* CRITICAL FIX: Generous bottom space prevents Safari toolbar overlap when expanded */
+            padding: 20px 0 180px 0; 
             opacity: 0;
             animation: cleanFadeIn 1.2s ease-out forwards;
             animation-delay: 0.2s;
@@ -131,7 +132,7 @@
             font-weight: 300;
         }
 
-        /* --- IMMERSIVE HARDWARE INDEX DRAWER --- */
+        /* --- HARDWARE MANIFEST SYSTEM --- */
         .manifest-trigger {
             display: block;
             width: 100%;
@@ -206,7 +207,7 @@
     <div class="container">
         <h1 class="page-title">Rates & Services</h1>
 
-        <h2 class="section-title">Mastering Tiers</h2>
+        <h2 class="section-title">Mastering</h2>
         
         <div class="service-tier">
             <div class="menu-item">
@@ -215,7 +216,7 @@
                 <span class="item-price">£100</span>
             </div>
             <div class="conversion-row"><span>€120</span><span>/</span><span>$130</span></div>
-            <p class="item-description">Stereo mastering optimized for all streaming platforms and digital distribution channels.</p>
+            <p class="item-description">Stereo mastering optimized for all major streaming platforms and digital distribution channels.</p>
         </div>
 
         <div class="service-tier">
@@ -238,7 +239,7 @@
             <p class="item-description">Comprehensive sonic balancing across your entire project file profile for a cohesive record flow.</p>
         </div>
 
-        <h2 class="section-title">Studio Info</h2>
+        <h2 class="section-title">Protocol</h2>
         <p class="info-text">
             Invisible Mastering Inc provides world-class sonic finishes, ensuring your translations remain pristine across high-end sound systems, car stereos, and mobile devices alike. 
         </p>
@@ -271,7 +272,7 @@
             </ul>
         </div>
 
-        <h2 class="section-title">Preparation</h2>
+        <h2 class="section-title">Delivery Specs</h2>
         <p class="info-text">
             Please export files at their native sample rate, leaving at least -3dB to -6dB of headroom on the master bus. Ensure no heavy brickwall limiters or clipping plug-ins are active on your final export track output.
         </p>
@@ -286,7 +287,7 @@
                 trigger.innerText = "+ View Studio Setup & Specs";
             } else {
                 content.style.display = "block";
-                trigger.innerText = "− Hide Studio Setup & Specs";
+                trigger.innerText = "− Hide Studio Manifest";
             }
         }
     </script>
