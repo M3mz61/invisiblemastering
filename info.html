@@ -63,7 +63,7 @@
             text-transform: uppercase;
         }
 
-        /* --- PROMO CODE ENTRY BOX STYLE --- */
+        /* --- PROMO CODE ENTRY DOCK --- */
         .promo-container {
             display: flex;
             justify-content: center;
@@ -148,7 +148,7 @@
             z-index: 2;
         }
         
-        /* Promotion Slashes */
+        /* Promotion Cross-out Treatment */
         .original-price {
             font-size: 1.1rem;
             text-decoration: line-through;
@@ -203,7 +203,7 @@
             border-color: #b5b5b7;
         }
 
-        /* --- HARDWARE MANIFEST DRAWER --- */
+        /* --- HARDWARE SPEC SHEET DRAWER --- */
         .manifest-trigger {
             display: block;
             width: 100%;
@@ -260,7 +260,7 @@
             font-weight: 400;
         }
 
-        /* Swapping view-state panel properties */
+        /* Panel states */
         .rate-panel {
             display: none;
         }
@@ -411,7 +411,7 @@
 
         <h2 class="section-title">Booking & Files</h2>
         <p class="info-text">
-            To submit stereo mixdown files, confirm studio openings, or request custom rate sheets, contact engineering directly at: <a href="mailto:invisiblemastering@gmail.com" class="contact-link">invisiblemastering@gmail.com</a>
+            To submit stereo mixdown files, confirm studio availability, or apply active quote vouchers, contact engineering directly at: <a href="mailto:invisiblemastering@gmail.com" class="contact-link">invisiblemastering@gmail.com</a>
         </p>
     </div>
 
@@ -428,29 +428,34 @@
             }
         }
 
-        // --- PROMO CODE LOGIC CONTROL MATRIX ---
+        // --- MANIFEST PROMO CODE INTERACTION CONTROL ---
         function applyPromoCode() {
             var enteredCode = document.getElementById('promo-field').value.trim().toUpperCase();
             
-            // CHOOSE YOUR PROMO CODE KEY HERE (Currently set to: LAUNCH25)
+            // CHOOSE YOUR PROMO CODE KEYWORD HERE
             var masterSecretCode = "LAUNCH25";
 
             if (enteredCode === masterSecretCode) {
-                // Hide standard view, reveal promo sashes
                 document.getElementById('panel-standard').classList.remove('active-panel');
                 document.getElementById('panel-promo').classList.add('active-panel');
                 document.getElementById('dynamic-title').innerText = "Special Event Active";
-                alert("Promo Applied: 25% Off Reduction Active.");
+                alert("Promo Code Applied: 25% Off Reduction Active.");
             } else {
-                // Reset back to standard views if empty or wrong
                 document.getElementById('panel-promo').classList.remove('active-panel');
                 document.getElementById('panel-standard').classList.add('active-panel');
                 document.getElementById('dynamic-title').innerText = "Rates & Services";
                 if (enteredCode !== "") {
-                    alert("Invalid Promotion Code code entry.");
+                    alert("Invalid Promotion Code entry.");
                 }
             }
         }
+
+        // FORCE STANDARD RATES ON INITIAL PAGE LOAD
+        window.onload = function() {
+            document.getElementById('panel-promo').classList.remove('active-panel');
+            document.getElementById('panel-standard').classList.add('active-panel');
+            document.getElementById('dynamic-title').innerText = "Rates & Services";
+        };
     </script>
 
 </body>
