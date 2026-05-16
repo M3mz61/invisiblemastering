@@ -3,27 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invisible Mastering</title>
+    <title>Invisible Mastering Inc</title>
     <style>
+        /* Base setup for a flawless dark theme layout */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #0b0b0b;
+            background-color: #ededed; /* Soft light background matching the new image paper-texture vibe */
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #1a1a1a; /* Dark text color to stand out sharply */
+            text-align: center;
         }
-        .landing-bg {
+
+        /* Displays your updated bold vector line-art character */
+        .character-container {
             width: 100%;
-            height: 100%;
-            background-image: url('Invisible%20main%2001.png');
+            height: 48vh; 
+            background-image: url('Invisible%20man%201.png'); /* Linked directly to your latest upload */
             background-repeat: no-repeat;
-            background-position: center center;
+            background-position: center bottom;
             background-size: contain;
+        }
+
+        /* Branding element with built-in smooth dropdown transition */
+        .branding {
+            margin-top: 30px;
+            padding: 0 20px;
+            opacity: 0; /* Starts completely hidden */
+            transform: translateY(-25px); /* Positioned slightly higher initially */
+            animation: elegantDropDown 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 0.3s; /* Tiny split-second wait after page load */
+        }
+
+        .title {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555555; /* Subtle dark gray for contrast hierarchy */
+            font-weight: 300;
+        }
+
+        /* The Animation Engine */
+        @keyframes elegantDropDown {
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Drops beautifully into its true home */
+            }
         }
     </style>
 </head>
 <body>
-    <div class="landing-bg"></div>
+
+    <div class="character-container"></div>
+
+    <div class="branding">
+        <div class="title">Invisible Mastering Inc</div>
+        <div class="tagline">Heard, but not seen.</div>
+    </div>
+
 </body>
 </html>
