@@ -5,6 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering Inc</title>
     <style>
+        /* Core Layout Canvas */
+body, html {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Typography & Links */
+.text-zone {
+    text-align: center;
+    z-index: 10;
+}
+
+.text-zone h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.tagline {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-style: italic;
+    color: #cccccc;
+    margin: 0 0 20px 0;
+}
+
+.links-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.studio-link {
+    color: #666666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Image Scaling & Stagger Logic */
+.card-man {
+    max-width: 200px;
+    width: 30vw;
+    height: auto;
+    display: block;
+}
+
+/* Wide Screen Layout (iMac & Mac Pro) */
+@media (min-width: 769px) {
+    .page-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .left-man {
+        transform: translateY(-25%); /* Shifts left man upward */
+    }
+    .right-man {
+        transform: translateY(25%);  /* Shifts right man downward */
+    }
+}
+
+/* Mobile Layout Clean Stacking */
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .card-man {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+}
         body, html {
             margin: 0;
             padding: 0;
