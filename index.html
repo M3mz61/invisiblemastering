@@ -3,195 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invisible Mastering Inc</title>
+    <title>Invisible Mastering zINC</title>
     <style>
-        /* Core Layout Canvas */
-body, html {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-.page-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-    position: relative;
-    box-sizing: border-box;
-}
-
-/* Typography & Links */
-.text-zone {
-    text-align: center;
-    z-index: 10;
-}
-
-.text-zone h1 {
-    font-family: 'Times New Roman', serif;
-    font-size: clamp(2.5rem, 5vw, 5.5rem);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.2;
-    margin: 0 0 10px 0;
-    color: #ffffff;
-}
-
-.tagline {
-    font-size: clamp(1.1rem, 2vw, 1.6rem);
-    font-style: italic;
-    color: #cccccc;
-    margin: 0 0 20px 0;
-}
-
-.links-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.studio-link {
-    color: #666666;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-/* Image Scaling & Stagger Logic */
-.card-man {
-    max-width: 200px;
-    width: 30vw;
-    height: auto;
-    display: block;
-}
-
-/* Wide Screen Layout (iMac & Mac Pro) */
-@media (min-width: 769px) {
-    .page-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .left-man {
-        transform: translateY(-25%); /* Shifts left man upward */
-    }
-    .right-man {
-        transform: translateY(25%);  /* Shifts right man downward */
-    }
-}
-
-/* Mobile Layout Clean Stacking */
-@media (max-width: 768px) {
-    .page-wrapper {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .card-man {
-        max-width: 150px;
-        margin: 0 auto;
-    }
-}
-        body, html {
+        /* 1. Reset Global Studio Canvas to Pure Black */
+        html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
-            background-color: #000000; 
-            font-family: 'Times New Roman', Times, serif;
+            background-color: #000000 !important;
+            overflow-x: hidden;
             box-sizing: border-box;
         }
+
+        /* 2. Main Flex Container to Center Everything */
         .page-wrapper {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 100vh;
-        }
-        .graphic-block {
-            width: 100%;
-            height: 35vh; 
-            position: relative;
-            background-color: #000000;
-        }
-        .detective-asset {
-            position: absolute;
-            height: 100%;
-            width: auto; 
-            mix-blend-mode: screen; 
-        }
-        .top-left-man {
-            top: 0;
-            left: 20%; 
-        }
-        .text-zone {
-            width: 100%;
-            height: 30vh;
-            display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
             background-color: #000000;
         }
-        .bottom-right-man {
-            top: 0;
-            right: 20%; 
-            transform: scaleX(-1); 
+
+        /* 3. Hero Graphic Scaling Box */
+        .hero-showcase {
+            width: 100%;
+            max-width: 900px; /* Limits size on massive Mac Pro screens so it stays sharp */
+            margin-bottom: 40px;
         }
-        .branding-centerpiece {
-            width: 90%;
-            max-width: 480px;
+
+        .glow-banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 4. Minimalist Link Alignment */
+        .studio-nav {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .nav-item {
+            color: #555555; /* Sleek muted gray links */
+            text-decoration: none;
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #ffffff; /* Glow white on hover */
+        }
+
+        /* 5. Minimalist Clean Footer */
+        footer {
+            margin-top: 40px;
             text-align: center;
-            color: #ffffff;
-            opacity: 0;
-            animation: cleanFadeIn 1.2s ease-out forwards;
-            animation-delay: 0.1s;
         }
-        .title {
-            font-size: 2.1rem;
-            font-weight: 400;
-            letter-spacing: 1.5px;
-            margin: 0 0 10px 0;
-            line-height: 1.2;
-        }
-        .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #b5b5b7;
-            margin: 0;
-            font-weight: 300;
-        }
-        @keyframes cleanFadeIn {
-            to {
-                opacity: 1;
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                padding: 20px 15px;
+                justify-content: flex-start; /* Flows naturally on small phone screens */
+                padding-top: 60px;
+            }
+            .hero-showcase {
+                margin-bottom: 30px;
             }
         }
     </style>
 </head>
 <body>
 
-    <<div class="page-wrapper">
+    <div class="page-wrapper">
 
-    <img src="Invisible main 01.png" alt="Invisible Man Left" class="card-man left-man">
-
-    <div class="text-zone">
-        <h1 class="title">Invisible Mastering<br>zINC</h1>
-        <p class="tagline">Heard, but not seen.</p>
-        
-        <div class="links-container">
-            <a href="info.html" class="studio-link">[info]</a>
-            <a href="vinyl.html" class="studio-link">[vinyl]</a>
+        <div class="hero-showcase">
+            <img src="invisible_Main.png" alt="Invisible Mastering zINC - Heard, but not seen" class="glow-banner">
         </div>
+
+        <nav class="studio-nav">
+            <a href="info.html" class="nav-item">[info]</a>
+            <a href="vinyl.html" class="nav-item">[vinyl]</a>
+        </nav>
+
+        <footer>
+            <a href="info.html" style="color: #111111; font-size: 10px; text-decoration: none;">[sys_archive]</a>
+        </footer>
+
     </div>
 
-    <img src="Invisible man 1.png" alt="Invisible Man Right" class="card-man right-man">
-
-</div></div>
-    </div>
-<footer style="margin-top: 100px; text-align: center;">
-    <a href="/vinyl.html" style="color: #111111; font-size: 10px; text-decoration: none; font-family: monospace;">[sys_archive]</a>
-</footer>
 </body>
 </html>
