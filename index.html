@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invisible Mastering zINC</title>
     <style>
-        /* 1. Reset Global Studio Canvas to Pure Black */
+        /* 1. Reset Canvas to Pure Minimal Studio Black */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             background-color: #000000 !important;
-            overflow-x: hidden;
+            overflow: hidden;
             box-sizing: border-box;
         }
 
-        /* 2. Main Flex Container to Center Everything */
+        /* 2. Flex wrapper to dead-center the artwork on Mac and Mobile */
         .page-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 20px;
             box-sizing: border-box;
             background-color: #000000;
         }
 
-        /* 3. Hero Graphic Scaling Box */
+        /* 3. Elastic Container for your Glow Graphic */
         .hero-showcase {
             width: 100%;
-            max-width: 900px; /* Limits size on massive Mac Pro screens so it stays sharp */
-            margin-bottom: 40px;
+            max-width: 850px; /* Limits width on massive iMac/Mac Pro screens so it stays laser-sharp */
+            margin-bottom: 25px;
         }
 
         .glow-banner {
@@ -41,7 +41,7 @@
             display: block;
         }
 
-        /* 4. Minimalist Link Alignment */
+        /* 4. Minimalist Navigation Row Links */
         .studio-nav {
             display: flex;
             gap: 30px;
@@ -49,7 +49,7 @@
         }
 
         .nav-item {
-            color: #555555; /* Sleek muted gray links */
+            color: #444444; /* Muted gray anchors that pop white when hovered */
             text-decoration: none;
             font-family: 'Times New Roman', serif;
             font-size: 16px;
@@ -58,25 +58,7 @@
         }
 
         .nav-item:hover {
-            color: #ffffff; /* Glow white on hover */
-        }
-
-        /* 5. Minimalist Clean Footer */
-        footer {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .page-wrapper {
-                padding: 20px 15px;
-                justify-content: flex-start; /* Flows naturally on small phone screens */
-                padding-top: 60px;
-            }
-            .hero-showcase {
-                margin-bottom: 30px;
-            }
+            color: #ffffff;
         }
     </style>
 </head>
@@ -85,17 +67,13 @@
     <div class="page-wrapper">
 
         <div class="hero-showcase">
-            <img src="invisible_Main.png" alt="Invisible Mastering zINC - Heard, but not seen" class="glow-banner">
+            <img src="invisible_Main.png" alt="Invisible Mastering zINC" class="glow-banner">
         </div>
 
         <nav class="studio-nav">
             <a href="info.html" class="nav-item">[info]</a>
             <a href="vinyl.html" class="nav-item">[vinyl]</a>
         </nav>
-
-        <footer>
-            <a href="info.html" style="color: #111111; font-size: 10px; text-decoration: none;">[sys_archive]</a>
-        </footer>
 
     </div>
 
