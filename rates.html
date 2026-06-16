@@ -17,7 +17,7 @@
             justify-content: space-between;
             min-height: 100vh;
             box-sizing: border-box;
-            padding: 4rem 1.5rem;
+            padding: 2rem 1.5rem;
         }
         .container {
             max-width: 450px;
@@ -26,7 +26,7 @@
         .nav-logo {
             width: 45px;
             height: auto;
-            margin: 0 auto 3.5rem auto;
+            margin: 0 auto 2.5rem auto;
             display: block;
         }
         .nav-logo img {
@@ -40,7 +40,7 @@
             font-weight: 700;
             letter-spacing: -0.01rem;
             text-align: center;
-            margin: 0 0 3rem 0;
+            margin: 0 0 2rem 0;
             color: #000000;
         }
         .section-header {
@@ -51,12 +51,12 @@
             color: #888888;
             border-bottom: 1px solid #eeeeee;
             padding-bottom: 0.5rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
         .rate-block {
-            padding: 1.5rem 0;
+            padding: 1.25rem 0;
             border-bottom: 1px dashed #eeeeee;
         }
         .rate-row {
@@ -81,7 +81,7 @@
             font-size: 0.8rem;
             color: #888888;
             font-style: italic;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             letter-spacing: 0.05rem;
         }
         .rate-desc {
@@ -89,6 +89,22 @@
             color: #555555;
             line-height: 1.5;
             font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .submit-btn {
+            font-family: "Bodoni 72", "Bodoni MT", Didot, serif;
+            font-size: 1rem;
+            font-style: italic;
+            color: #111111;
+            text-decoration: none;
+            border-bottom: 1px solid #111111;
+            padding-bottom: 2px;
+            display: inline-block;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .submit-btn:hover {
+            color: #888888;
+            border-color: #888888;
         }
         footer {
             width: 100%;
@@ -100,7 +116,7 @@
             letter-spacing: 0.02rem;
             border-top: 1px dashed #eeeeee;
             padding-top: 1.5rem;
-            margin-top: 5rem;
+            margin-top: 4rem;
         }
         .footer-link {
             color: #666666;
@@ -125,7 +141,7 @@
 
         <div class="section-header">Mastering Tiers</div>
 
-        <!-- Tier 01: Single Track -->
+        <!-- Tier 01 -->
         <div class="rate-block">
             <div class="rate-row">
                 <span class="rate-name">Single Track</span>
@@ -133,9 +149,10 @@
             </div>
             <div class="currency-row">€120 / $130</div>
             <div class="rate-desc">Stereo mastering optimized for all streaming platforms, vinyl compliance, and digital distribution channels.</div>
+            <a href="mailto:info@://invisiblemastering.com" class="submit-btn">Submit Audio</a>
         </div>
 
-        <!-- Tier 02: Stem Mastering -->
+        <!-- Tier 02 -->
         <div class="rate-block">
             <div class="rate-row">
                 <span class="rate-name">Stem Mastering</span>
@@ -143,9 +160,10 @@
             </div>
             <div class="currency-row">€200 / $215</div>
             <div class="rate-desc">Up to 5 separate sub-mix stems for precision instrument balance, stereo depth, and total dynamic control.</div>
+            <a href="mailto:info@://invisiblemastering.com" class="submit-btn">Submit Stems</a>
         </div>
 
-        <!-- Tier 03: EP Package -->
+        <!-- Tier 03 -->
         <div class="rate-block">
             <div class="rate-row">
                 <span class="rate-name">EP Package (4-6 Tracks)</span>
@@ -153,6 +171,7 @@
             </div>
             <div class="currency-row">€500 / $540</div>
             <div class="rate-desc">Comprehensive sonic balancing across your entire project file profile for a cohesive record flow.</div>
+            <a href="mailto:info@://invisiblemastering.com" class="submit-btn">Submit Project</a>
         </div>
     </div>
 
