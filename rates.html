@@ -3,74 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rates // Invisible Mastering Inc.</title>
+    <title>Invisible Mastering Inc.</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            color: #111111;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             box-sizing: border-box;
-            padding: 3rem 1rem 4rem 1rem;
+            padding: 4rem 1.5rem;
         }
-        .container {
-            max-width: 450px;
-            width: 100%;
-        }
-        .logo-header {
-            width: 100%;
+        main {
             display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
+            flex-direction: column;
+            align-items: center;
+            margin: auto 0;
+            text-align: center;
         }
-        .logo-header img {
-            width: 140px;
+        .logo-link {
+            width: 320px; /* Doubled the visual footprint size */
+            height: auto;
+            margin-bottom: 3rem;
+            transition: opacity 0.3s ease;
+            display: block;
+        }
+        .logo-link:hover {
+            opacity: 0.8;
+        }
+        .logo-link img {
+            width: 100%;
             height: auto;
             display: block;
         }
-        .divider {
-            border-top: 1px dashed #dddddd;
-            margin-bottom: 2.5rem;
-            width: 100%;
-        }
-        .menu-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            background-color: #ffffff;
-        }
-        .card-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
-        .card-title {
+        .title-link {
             font-family: "Bodoni 72", "Bodoni MT", Didot, "Playfair Display", serif;
-            font-size: 1.6rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            letter-spacing: -0.01rem;
             color: #000000;
+            text-decoration: none;
+            letter-spacing: -0.02rem;
+            margin-bottom: 0.75rem;
+            display: block;
         }
-        .card-action {
-            font-size: 0.85rem;
-            letter-spacing: 0.05rem;
-            text-transform: uppercase;
-            color: #222222;
-            font-weight: 600;
-        }
-        .card-desc {
-            font-size: 0.85rem;
-            color: #888888;
-            line-height: 1.4;
+        .tagline {
+            font-family: "Bodoni 72", "Bodoni MT", Didot, "Playfair Display", serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555555;
+            margin: 0;
             font-weight: 400;
         }
         footer {
@@ -83,7 +68,6 @@
             letter-spacing: 0.02rem;
             border-top: 1px dashed #eeeeee;
             padding-top: 1.5rem;
-            margin-top: 4rem;
         }
         .footer-link {
             color: #666666;
@@ -99,31 +83,15 @@
 </head>
 <body>
 
-    <div class="container">
-        
-        <a href="index.html" class="logo-header">
+    <div></div> <!-- Invisible balance spacer -->
+
+    <main>
+        <a href="rates.html" class="logo-link">
             <img src="images/Hat%20glasses%203:4.png" alt="Invisible Mastering">
         </a>
-
-        <div class="divider"></div>
-
-        <div class="menu-card">
-            <div class="card-row">
-                <span class="card-title">Stereo Master</span>
-                <span class="card-action">£100</span>
-            </div>
-            <div class="card-desc">Digital, Vinyl, and Streaming Compliance Matrix.</div>
-        </div>
-
-        <div class="menu-card">
-            <div class="card-row">
-                <span class="card-title">Session Work</span>
-                <span class="card-action">Contact</span>
-            </div>
-            <div class="card-desc">Arrangement Summing & Unquantized Timing Optimization.</div>
-        </div>
-
-    </div>
+        <a href="rates.html" class="title-link">Invisible Mastering</a>
+        <p class="tagline">“Heard, But Not Seen…”</p>
+    </main>
 
     <footer>
         Invisible Mastering © 2026 / <a href="https://flaversoulrecords.com" class="footer-link">Flave R Soul Records</a> © All Rights Reserved.
