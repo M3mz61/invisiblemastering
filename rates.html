@@ -14,8 +14,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
             box-sizing: border-box;
-            padding: 3rem 1rem;
+            padding: 3rem 1rem 4rem 1rem;
         }
         .container {
             max-width: 450px;
@@ -71,6 +73,28 @@
             line-height: 1.4;
             font-weight: 400;
         }
+        footer {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #999999;
+            line-height: 1.6;
+            letter-spacing: 0.02rem;
+            border-top: 1px dashed #eeeeee;
+            padding-top: 1.5rem;
+            margin-top: 4rem;
+        }
+        .footer-link {
+            color: #666666;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #000000;
+            border-color: #000000;
+        }
     </style>
 </head>
 <body>
@@ -100,6 +124,10 @@
         </div>
 
     </div>
+
+    <footer>
+        Invisible Mastering © 2026 / <a href="https://flaversoulrecords.com" class="footer-link">Flave R Soul Records</a> © All Rights Reserved.
+    </footer>
 
 </body>
 </html>
