@@ -4,188 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rates // Invisible Mastering Inc.</title>
+    <!-- Google Fonts import to guarantee Bodoni displays correctly across all devices -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
-            color: #111111;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #000000;
+            font-family: "Bodoni Moda", "Bodoni 72", Didot, serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
             min-height: 100vh;
             box-sizing: border-box;
-            padding: 2rem 1.5rem;
+            padding: 4rem 1.5rem;
         }
         .container {
-            max-width: 450px;
+            max-width: 500px;
             width: 100%;
         }
         .nav-logo {
-            width: 240px;
+            width: 80px;
             height: auto;
-            margin: 0 auto 2.5rem auto;
+            margin: 0 auto 1.5rem auto;
             display: block;
+            text-align: center;
         }
         .nav-logo img {
             width: 100%;
             height: auto;
             display: block;
+            filter: grayscale(100%) brightness(0);
         }
         h1 {
-            font-family: "Bodoni 72", "Bodoni MT", Didot, "Playfair Display", serif;
             font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.01rem;
+            font-weight: 400;
             text-align: center;
             margin: 0 0 2rem 0;
-            color: #000000;
+            letter-spacing: -0.02rem;
         }
         .section-header {
-            font-family: "Bodoni 72", "Bodoni MT", Didot, "Playfair Display", serif;
-            font-size: 1.1rem;
-            letter-spacing: 0.1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.15rem;
             text-transform: uppercase;
-            color: #888888;
-            border-bottom: 1px solid #eeeeee;
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            color: #000000;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 0.25rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
         .rate-block {
-            padding: 1.25rem 0;
-            border-bottom: 1px dashed #eeeeee;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #000000;
+        }
+        .rate-block:last-of-type {
+            border-bottom: none;
         }
         .rate-row {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.1rem;
         }
         .rate-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #000000;
+            font-size: 1.15rem;
+            font-weight: 700;
             letter-spacing: -0.01rem;
         }
         .rate-price {
-            font-family: "Bodoni 72", "Bodoni MT", Didot, "Playfair Display", serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
         }
         .currency-row {
             text-align: right;
             font-size: 0.8rem;
-            color: #888888;
-            font-style: italic;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             letter-spacing: 0.05rem;
         }
         .rate-desc {
             font-size: 0.85rem;
-            color: #555555;
-            line-height: 1.5;
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-        .manifesto-text {
-            font-size: 0.85rem;
-            color: #000000;
             line-height: 1.6;
-            font-weight: 600;
-            background-color: #f9f9f9;
-            padding: 1rem;
-            border-left: 2px solid #000000;
-            margin: 1.5rem 0;
+            font-weight: 400;
+            margin-bottom: 1.25rem;
         }
         .submit-btn {
-            font-family: "Bodoni 72", "Bodoni MT", Didot, serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-style: italic;
-            color: #111111;
+            color: #000000;
             text-decoration: none;
-            border-bottom: 1px solid #111111;
+            border-bottom: 1px solid #000000;
             padding-bottom: 2px;
             display: inline-block;
-            transition: color 0.2s ease, border-color 0.2s ease;
         }
         .submit-btn:hover {
-            color: #888888;
-            border-color: #888888;
+            opacity: 0.6;
+        }
+        /* Embed Portfolios */
+        .embed-container {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+        .embed-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        iframe {
+            border: 1px solid #000000;
+            background: #ffffff;
+            width: 100%;
         }
         footer {
             width: 100%;
-            max-width: 450px;
+            max-width: 500px;
             text-align: center;
             font-size: 0.75rem;
-            color: #000000;
-            font-weight: bold;
+            font-weight: 700;
             line-height: 1.6;
             letter-spacing: 0.02rem;
-            border-top: 1px dashed #eeeeee;
+            border-top: 1px solid #000000;
             padding-top: 1.5rem;
-            margin-top: 4rem;
+            margin-top: 5rem;
         }
         .footer-link {
             color: #000000;
             text-decoration: none;
             border-bottom: 1px solid #000000;
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        .footer-link:hover {
-            color: #888888;
-            border-color: #888888;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- Logo -->
         <a href="index.html" class="nav-logo">
-            <img src="images/Bowler%20Logo1.png" alt="Home">
+            <img src="images/Bowler%20Logo1.png" alt="Invisible Mastering">
         </a>
 
         <h1>Rates & Services</h1>
 
-        <div class="section-header">Operational Parameters</div>
+        <div class="section-header">B2B Production Engineering</div>
         
-        <div class="manifesto-text">
-            I will master your audio to the absolute best of my ability regardless of genre or status. However, if you require the ego massage and grovelling dialogue of the current social climate, you need to go to any of the other multitude of "ass-kissing included" mastering services. I am a ghost, the wizard behind a curtain. I am not a public-facing customer care consultant.
-        </div>
-
-        <div class="section-header">Engineering Rates</div>
-
+        <!-- Studio Day Rate -->
         <div class="rate-block">
             <div class="rate-row">
-                <span class="rate-name">Stereo Mastering (Per Track)</span>
-                <span class="rate-price">£100</span>
-            </div>
-            <div class="currency-row">€120 / $130</div>
-            <div class="rate-desc">Native 96kHz hybrid hardware signal path optimization. Engineered for complete dynamic translation, low-end stability, and broadcast compliance across all playback channels.</div>
-            <a href="mailto:info@invisiblemastering.com" class="submit-btn">Submit Stereo Audio</a>
-        </div>
-
-        <div class="rate-block">
-            <div class="rate-row">
-                <span class="rate-name">Stem Mastering (Up to 5 Stems)</span>
-                <span class="rate-price">£170</span>
-            </div>
-            <div class="currency-row">€200 / $215</div>
-            <div class="rate-desc">Sub-mix isolation for precise instrument balance and stereophonic phase control before the final hardware mastering line print.</div>
-            <a href="mailto:info@invisiblemastering.com" class="submit-btn">Submit Audio Stems</a>
-        </div>
-
-        <div class="rate-block">
-            <div class="rate-row">
-                <span class="rate-name">Studio Day Rate Lockout</span>
+                <span class="rate-name">Studio Day Rate</span>
                 <span class="rate-price">£550</span>
             </div>
             <div class="currency-row">€650 / $710</div>
-            <div class="rate-desc">Full 8-hour dedicated session occupancy. Multi-stem engineering, hardware rack tracking alignment, and full-album project balance.</div>
-            <a href="mailto:info@invisiblemastering.com" class="submit-btn">Request Session Allocation</a>
+            <div class="rate-desc">Full 8-hour engineering face-out. Native 96kHz hybrid hardware signal path tracking, multi-stem mixing, and final engineering optimization.</div>
+            <a href="mailto:info@://invisiblemastering.com" class="submit-btn">Book Session</a>
+        </div>
+
+        <!-- Broadcast Compliance & ADR -->
+        <div class="rate-block">
+            <div class="rate-row">
+                <span class="rate-name">Broadcast Compliance & ADR</span>
+                <span class="rate-price">£75</span>
+            </div>
+            <div class="currency-row">Per Track / Maximum 2 Hours</div>
+            <div class="rate-desc">Dialogue correction, vocal noise floor attenuation, phase alignment, and strict EBU R128 / ATSC A/85 LUFS loudness compliance engineering for TV, film, and network audio.</div>
+            <a href="mailto:info@://invisiblemastering.com" class="submit-btn">Submit Brief</a>
+        </div>
+
+        <div class="section-header">Verification & Portfolio</div>
+
+        <!-- Spotify Embed -->
+        <div class="embed-container">
+            <span class="embed-label">Spotify Master Portfolio</span>
+            <!-- Replace the src URL with your actual Spotify artist/playlist URI code -->
+            <iframe src="https://spotify.com" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <!-- Beatport & Traxsource Player / Shopfront Embeds -->
+        <div class="embed-container">
+            <span class="embed-label">Beatport Label Showroom</span>
+            <!-- Replace with your custom Beatport or Traxsource track player widget URL -->
+            <iframe src="https://beatport.com" height="162" loading="lazy"></iframe>
+        </div>
+
+        <div class="rate-block" style="border-bottom: none; padding-bottom: 0;">
+            <div class="rate-row">
+                <span class="rate-name">Retainer Contracts</span>
+                <span class="rate-price">£1,200</span>
+            </div>
+            <div class="currency-row">Monthly / Priority Access</div>
+            <div class="rate-desc">Guaranteed scheduling allocation for active independent labels and post-production studios requiring up to 15 stereo master passes per month with rapid 48-hour turnaround compliance.</div>
+            <a href="mailto:info@://invisiblemastering.com" class="submit-btn">Secure Retainer</a>
         </div>
     </div>
 
